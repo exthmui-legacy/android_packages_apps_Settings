@@ -37,7 +37,6 @@ public class ExthmVersionDialogController {
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
     private static final String EXTHM_PROPERTY = "ro.exthm.version";
     private static final int EXTHM_VERSION_VALUE_ID = R.id.exthm_version_number;
-    private static final int EXTHM_VERSION_LABEL_ID = R.id.exthm_version;
 
     private final FirmwareVersionDialogFragment mDialog;
     private final Context mContext;
