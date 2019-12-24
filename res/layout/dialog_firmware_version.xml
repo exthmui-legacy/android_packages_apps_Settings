@@ -56,6 +56,20 @@
             style="@style/device_info_dialog_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+            
+            
+       <TextView
+            style="@style/device_info_dialog_label"
+            android:id="@+id/exthm_version_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exthm_version"/>
+        <TextView
+            style="@style/device_info_dialog_value"
+            android:id="@+id/exthm_version_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
         <TextView
             style="@style/device_info_dialog_label"

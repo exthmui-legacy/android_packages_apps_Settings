@@ -10087,4 +10087,9 @@
 
     <!-- Title for Connected device shortcut [CHAR LIMIT=30] -->
     <string name="devices_title">Devices</string>
+    
+   <!-- exTHm-UI version -->
+    <string name="exthm_version">exTHmUI Version</string>
+    <string name="exthm_version_default">Unknown</string>
+
 </resources>
