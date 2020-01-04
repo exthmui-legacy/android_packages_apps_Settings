@@ -4153,10 +4153,5 @@
     <string name="pref_title_network_details" msgid="7186418845727358964">"网络详情"</string>
     <string name="about_phone_device_name_warning" msgid="8885670415541365348">"你的设备名称会显示在手机上的应用中。此外，当你连接到蓝牙设备或设置 WLAN 热点时，其他人可能也会看到你的设备名称。"</string>
     <string name="devices_title" msgid="7701726109334110391">"设备"</string>
-    <string name="exthm_version">exTHmUI 版本</string>
-    <string name="exthm_version_default">未知</string>
-    <string name="exthm_code">exTHmUI 版本代号</string>
-    <string name="exthm_code_default">cirno(9)</string>
-    <string name="based_lineage_version>底层 LineageOS 版本</string>
-    <string name="based_lineage_version_label>16.0</string>
+    <string name="based_on_lineage_text">基于 LineageOS</string>
 </resources>

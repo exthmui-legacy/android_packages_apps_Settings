@@ -76,15 +76,16 @@
             
        <TextView
             style="@style/device_info_dialog_label"
-            android:id="@+id/exthm_version_label"
+            android:id="@+id/based_on_lineage_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/exthm_version"/>
+            android:text="@string/based_on_lineage"/>
         <TextView
             style="@style/device_info_dialog_value"
-            android:id="@+id/exthm_version_number"
+            android:id="@+id/lineage_version_number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/basic_lineage_version"/>
 
 
         <TextView
