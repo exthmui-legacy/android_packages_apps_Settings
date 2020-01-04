@@ -4155,6 +4155,8 @@
     <string name="devices_title" msgid="7701726109334110391">"设备"</string>
     <string name="exthm_version">exTHmUI 版本</string>
     <string name="exthm_version_default">未知</string>
-	<string name="exthm_code">exTHmUI 版本代号</string>
-	<string name="exthm_code_default">cirno(9)</string>
+    <string name="exthm_code">exTHmUI 版本代号</string>
+    <string name="exthm_code_default">cirno(9)</string>
+    <string name="based_lineage_version>底层 LineageOS 版本</string>
+    <string name="based_lineage_version_label>16.0</string>
 </resources>
