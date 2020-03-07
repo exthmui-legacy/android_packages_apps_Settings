@@ -22,6 +22,12 @@
     android:title="@string/firmware_version"
     settings:keywords="@string/keywords_android_version">
 
+    <!-- exTHm logo -->
+    <PreferenceScreen
+        android:key="exthm_logo"
+        android:layout="@layout/exthm_logo"
+        android:selectable="false" />
+
     <!-- Android version -->
     <Preference
         android:key="os_firmware_version"
