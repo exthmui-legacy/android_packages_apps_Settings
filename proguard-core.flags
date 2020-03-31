@@ -1,0 +1,2 @@
+# exTHmSettings
+-keep class org.exthmui.settings.**

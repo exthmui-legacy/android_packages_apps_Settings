@@ -27,7 +27,19 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.java",
+           "exTHmSettings/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages org.exthmui.settings"],
+
+    resource_dirs: ["res",
+                    "exTHmSettings/res"
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard-core.flags"],
+    },
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
