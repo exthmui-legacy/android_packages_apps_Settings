@@ -33,10 +33,26 @@
         android:order="2"/>
 
     <PreferenceCategory
+        android:key="configure_notifications_mipush"
+        android:title="@string/mipush_title"
+        settings:allowDividerAbove="false"
+        android:order="3">
+        <PreferenceScreen
+            android:key="mipush_manager"
+            android:title="@string/mipush_manager_title"
+            android:summary="@string/mipush_manager_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="top.trumeet.mipush"
+                    android:targetClass="top.trumeet.mipushframework.settings.MainActivity" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    
+
+    <PreferenceCategory
         android:key="recent_notifications_category"
         android:title="@string/recent_notifications"
         settings:allowDividerAbove="false"
-        android:order="3">
+        android:order="4">
         <!-- Placeholder for a list of recent apps -->
 
         <!-- See all apps button -->
@@ -44,7 +60,7 @@
             android:key="all_notifications"
             android:title="@string/notifications_title"
             android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
-            android:order="4">
+            android:order="5">
             <extra
                 android:name="classname"
                 android:value="com.android.settings.Settings$NotificationAppListActivity"/>
