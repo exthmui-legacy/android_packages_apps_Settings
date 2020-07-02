@@ -27,6 +27,6 @@
         android:layout_height="match_parent"
         android:src="@drawable/exthmui_banner"
         android:adjustViewBounds="true"
-        android:scaleType="centerInside" />
+        android:scaleType="fitCenter" />
 
 </LinearLayout>
