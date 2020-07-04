@@ -29,7 +29,7 @@
     <FrameLayout android:id="@+id/pinned_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="@null"
         android:elevation="1dp"
         android:visibility="gone"/>
 
@@ -88,4 +88,3 @@
     </LinearLayout>
 
 </LinearLayout>
-
