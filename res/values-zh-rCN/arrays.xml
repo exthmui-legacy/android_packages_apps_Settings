@@ -37,6 +37,7 @@
     <item msgid="2693197579676214668">"5 分钟"</item>
     <item msgid="1955784331962974678">"10 分钟"</item>
     <item msgid="5578717731965793584">"30 分钟"</item>
+    <item>"永不休眠"</item>
   </string-array>
   <string-array name="dream_timeout_entries">
     <item msgid="1999412608953538363">"永不"</item>
