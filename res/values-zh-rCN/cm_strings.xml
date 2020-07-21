@@ -21,8 +21,8 @@
     </plurals>
     <string name="show_dev_on_cm">您已经启用了开发者选项！</string>
     <string name="show_dev_already_cm">不用了，您已启用开发者选项。</string>
-    <string name="berry_black_theme_title">AMOLED黑</string>
-    <string name="berry_black_theme_summary">启用深色主题的AMOLED纯黑背景</string>
+    <string name="berry_black_theme_title">纯黑背景</string>
+    <string name="berry_black_theme_summary">启用深色主题的纯黑背景</string>
     <string name="suggestion_button_close">关闭</string>
     <string name="advanced_reboot_title">高级重启</string>
     <string name="advanced_reboot_summary">设备已解锁时，在电源菜单的重启选项下加入重启至恢复模式或引导程序的选项</string>

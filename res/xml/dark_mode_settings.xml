@@ -53,9 +53,4 @@
             settings:searchable="false"
             settings:allowDividerAbove="true"/>
 
-    <PreferenceScreen
-        android:key="mifeng_knife_dark_theme"
-        android:layout="@layout/mifeng_knife"
-        android:selectable="false"/>
-
 </PreferenceScreen>
