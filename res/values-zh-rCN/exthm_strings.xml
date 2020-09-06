@@ -18,4 +18,7 @@
     <string name="mipush_title">MiPush</string>
     <string name="mipush_manager_title">MiPush 管理器</string>
     <string name="mipush_manager_summary">管理小米推送服务</string>
+
+    <string name="show_app_volume_title">分应用音量控制</string>
+    <string name="show_app_volume_summary">在音量控制面板中显示应用程序的音量</string>
 </resources>

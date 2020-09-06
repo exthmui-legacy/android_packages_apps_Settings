@@ -18,4 +18,7 @@
     <string name="mipush_title">MiPush</string>
     <string name="mipush_manager_title">MiPush Manager</string>
     <string name="mipush_manager_summary">Manage MiPush Service</string>
+
+    <string name="show_app_volume_title">Show app volume</string>
+    <string name="show_app_volume_summary">Show app volume in volume panel.</string>
 </resources>
