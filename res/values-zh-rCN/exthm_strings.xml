@@ -73,4 +73,7 @@
     <string name="lockpattern_settings_enable_error_path_title">显示图案错误</string>
     <string name="lockpattern_settings_enable_dots_title">显示图案圆点</string>
     <string name="connected_tws_device_saved_title">已保存的耳机</string>
+
+    <string name="show_app_volume_title">分应用音量控制</string>
+    <string name="show_app_volume_summary">在音量控制面板中显示应用程序的音量</string>
 </resources>
