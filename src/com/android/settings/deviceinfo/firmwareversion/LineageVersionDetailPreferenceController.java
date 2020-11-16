@@ -44,9 +44,9 @@ public class LineageVersionDetailPreferenceController extends BasePreferenceCont
 
     private static final String KEY_LINEAGE_VERSION_PROP = "ro.exthm.version";
 
-    private static final String PLATLOGO_PACKAGE_NAME = "org.lineageos.lineageparts";
-    private static final String PLATLOGO_ACTIVITY_CLASS =
-            PLATLOGO_PACKAGE_NAME + ".logo.PlatLogoActivity";
+    private static final String EASTER_EGG_PACKAGE_NAME = "org.exthmui.easter.egg.hakurei";
+    private static final String EASTER_EGG_ACTIVITY_CLASS =
+            EASTER_EGG_PACKAGE_NAME + ".MainActivity";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
@@ -97,12 +97,12 @@ public class LineageVersionDetailPreferenceController extends BasePreferenceCont
                     RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mContext,
                             mFunDisallowedAdmin);
                 }
-                Log.d(TAG, "Sorry, no fun for you!");
+                Log.d(TAG, "Hey,it's no fun for you! Shikieiki will judge you!");
                 return true;
             }
 
             final Intent intent = new Intent(Intent.ACTION_MAIN)
-                     .setClassName(PLATLOGO_PACKAGE_NAME, PLATLOGO_ACTIVITY_CLASS);
+                     .setClassName(EASTER_EGG_PACKAGE_NAME, EASTER_EGG_ACTIVITY_CLASS);
             try {
                 mContext.startActivity(intent);
             } catch (Exception e) {
