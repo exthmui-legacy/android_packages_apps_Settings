@@ -4675,4 +4675,8 @@
     <string name="more_connection">更多连接</string>
     <string name="more_settings">更多设置</string>
     <string name="about_exthmui">关于 exTHmUI</string>
+
+    <!-- Screen off fod -->
+    <string name="fod_gesture_title">熄屏指纹</string>
+    <string name="fod_gesture_summary">在未点亮屏幕的情况下使用指纹解锁设备</string>
 </resources>

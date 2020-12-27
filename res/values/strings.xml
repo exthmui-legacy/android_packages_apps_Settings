@@ -11430,4 +11430,8 @@
     <string name="more_connection">More connections</string>
     <string name="more_settings">More settings</string>
     <string name="about_exthmui">About exTHmUI</string>
+
+    <!-- Screen off fod -->
+    <string name="fod_gesture_title">Screen off fingerprint</string>
+    <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
 </resources>
