@@ -69,10 +69,10 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
         mBatteryBroadcastReceiver.unRegister();
     }
 
-    @Override
-    public CharSequence getSummary() {
-        return getDashboardLabel(mContext, mBatteryInfo);
-    }
+//    @Override
+//    public CharSequence getSummary() {
+//        return getDashboardLabel(mContext, mBatteryInfo);
+//    }
 
     static CharSequence getDashboardLabel(Context context, BatteryInfo info) {
         if (info == null || context == null) {

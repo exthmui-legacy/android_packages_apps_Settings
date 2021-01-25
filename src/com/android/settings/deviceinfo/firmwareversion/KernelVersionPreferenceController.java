@@ -34,6 +34,6 @@ public class KernelVersionPreferenceController extends BasePreferenceController 
 
     @Override
     public CharSequence getSummary() {
-        return DeviceInfoUtils.getFormattedKernelVersion(mContext);
+        return DeviceInfoUtils.getSimpleFormattedKernelVersion();
     }
 }

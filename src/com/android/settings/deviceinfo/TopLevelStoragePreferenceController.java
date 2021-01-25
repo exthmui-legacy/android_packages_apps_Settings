@@ -46,23 +46,23 @@ public class TopLevelStoragePreferenceController extends BasePreferenceControlle
         return AVAILABLE_UNSEARCHABLE;
     }
 
-    @Override
-    protected void refreshSummary(Preference preference) {
-        if (preference == null) {
-            return;
-        }
-
-        ThreadUtils.postOnBackgroundThread(() -> {
-            final NumberFormat percentageFormat = NumberFormat.getPercentInstance();
-            final PrivateStorageInfo info = PrivateStorageInfo.getPrivateStorageInfo(
-                    mStorageManagerVolumeProvider);
-            final double privateUsedBytes = info.totalBytes - info.freeBytes;
-
-            ThreadUtils.postOnMainThread(() -> {
-                preference.setSummary(mContext.getString(R.string.storage_summary,
-                        percentageFormat.format(privateUsedBytes / info.totalBytes),
-                        Formatter.formatFileSize(mContext, info.freeBytes)));
-            });
-        });
-    }
+//    @Override
+//    protected void refreshSummary(Preference preference) {
+//        if (preference == null) {
+//            return;
+//        }
+//
+//        ThreadUtils.postOnBackgroundThread(() -> {
+//            final NumberFormat percentageFormat = NumberFormat.getPercentInstance();
+//            final PrivateStorageInfo info = PrivateStorageInfo.getPrivateStorageInfo(
+//                    mStorageManagerVolumeProvider);
+//            final double privateUsedBytes = info.totalBytes - info.freeBytes;
+//
+//            ThreadUtils.postOnMainThread(() -> {
+//                preference.setSummary(mContext.getString(R.string.storage_summary,
+//                        percentageFormat.format(privateUsedBytes / info.totalBytes),
+//                        Formatter.formatFileSize(mContext, info.freeBytes)));
+//            });
+//        });
+//    }
 }

@@ -35,18 +35,18 @@ public class TopLevelSecurityEntryPreferenceController extends BasePreferenceCon
         return AVAILABLE_UNSEARCHABLE;
     }
 
-    @Override
-    public CharSequence getSummary() {
-        final FingerprintManager fpm =
-                Utils.getFingerprintManagerOrNull(mContext);
-        final FaceManager faceManager =
-                Utils.getFaceManagerOrNull(mContext);
-        if (faceManager != null && faceManager.isHardwareDetected()) {
-            return mContext.getText(R.string.security_dashboard_summary_face);
-        } else if (fpm != null && fpm.isHardwareDetected()) {
-            return mContext.getText(R.string.security_dashboard_summary);
-        } else {
-            return mContext.getText(R.string.security_dashboard_summary_no_fingerprint);
-        }
-    }
+//    @Override
+//    public CharSequence getSummary() {
+//        final FingerprintManager fpm =
+//                Utils.getFingerprintManagerOrNull(mContext);
+//        final FaceManager faceManager =
+//                Utils.getFaceManagerOrNull(mContext);
+//        if (faceManager != null && faceManager.isHardwareDetected()) {
+//            return mContext.getText(R.string.security_dashboard_summary_face);
+//        } else if (fpm != null && fpm.isHardwareDetected()) {
+//            return mContext.getText(R.string.security_dashboard_summary);
+//        } else {
+//            return mContext.getText(R.string.security_dashboard_summary_no_fingerprint);
+//        }
+//    }
 }
