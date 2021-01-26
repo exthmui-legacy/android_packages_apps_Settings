@@ -1072,4 +1072,17 @@ public final class Utils extends com.android.settingslib.Utils {
         }
         return input;
     }
+
+    public static boolean startActivitySafely(Context context, Intent intent) {
+        if (intent == null) {
+            return false;
+        }
+        try {
+            context.startActivity(intent);
+            return true;
+        } catch (ActivityNotFoundException e) {
+            return false;
+        }
+    }
+
 }
