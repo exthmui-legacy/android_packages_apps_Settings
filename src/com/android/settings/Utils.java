@@ -166,7 +166,7 @@ public final class Utils extends com.android.settingslib.Utils {
             int listSize = list.size();
             for (int i = 0; i < listSize; i++) {
                 ResolveInfo resolveInfo = list.get(i);
-                if ((resolveInfo.activityInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM)
+                if ((resolveInfo.activityInfo.applicationInfo.flags & ApplicationInfo.FLAG_INSTALLED)
                         != 0) {
 
                     // Replace the intent with this specific activity
@@ -176,7 +176,7 @@ public final class Utils extends com.android.settingslib.Utils {
 
                     if ((flags & UPDATE_PREFERENCE_FLAG_SET_TITLE_TO_MATCHING_ACTIVITY) != 0) {
                         // Set the preference title to the activity's label
-                        preference.setTitle(resolveInfo.loadLabel(pm));
+//                        preference.setTitle(resolveInfo.loadLabel(pm));
                     }
 
                     return true;
