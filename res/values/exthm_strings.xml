@@ -38,4 +38,7 @@
         <item quantity="one">1 app locked</item>
         <item quantity="other">%d apps locked</item>
     </plurals>
+
+    <string name="wifi_tether_client_list_title">Client List</string>
+    <string name="wifi_tether_client_list_summary">Manage clients connected to hotspot</string>
 </resources>

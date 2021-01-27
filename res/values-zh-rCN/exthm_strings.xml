@@ -38,4 +38,7 @@
         <item quantity="one">1 个应用程序已锁定</item>
         <item quantity="other">%d 个应用程序已锁定</item>
     </plurals>
+
+    <string name="wifi_tether_client_list_title">客户端列表</string>
+    <string name="wifi_tether_client_list_summary">管理已连接到热点的设备</string>
 </resources>
