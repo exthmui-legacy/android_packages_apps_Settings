@@ -118,4 +118,7 @@
     <string name="max_refresh_rate_title">最大刷新率</string>
     <string name="battery_saver_refresh_rate_title">降低刷新率</string>
     <string name="battery_saver_refresh_rate_summary">当省电模式开启时，使用60Hz</string>
+
+    <string name="wifi_tether_client_list_title">客户端列表</string>
+    <string name="wifi_tether_client_list_summary">管理已连接到热点的设备</string>
 </resources>
