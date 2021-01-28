@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/account_avatar"
+        android:paddingEnd="@dimen/search_bar_avatar_end_padding"
+        android:paddingTop="@dimen/search_bar_avatar_top_bottom_padding"
+        android:paddingBottom="@dimen/search_bar_avatar_top_bottom_padding"
+        android:layout_width="@dimen/search_bar_avatar_width"
+        android:layout_height="@dimen/search_bar_height"
+        android:showAsAction="always"
+        android:contentDescription="@string/search_bar_account_avatar_content_description"/>
+
+    <item
+        android:title="@string/search_settings"
+        android:id="@+id/homepage_search"
+        android:icon="@drawable/ic_homepage_search"
+        android:showAsAction="always"/>
+
+</menu>

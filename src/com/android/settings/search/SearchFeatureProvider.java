@@ -88,20 +88,24 @@ public interface SearchFeatureProvider {
         navView.setBackground(null);
 
         toolbar.setOnClickListener(tb -> {
-            final Context context = activity.getApplicationContext();
-            final Intent intent = buildSearchIntent(context, pageId);
-
-            if (activity.getPackageManager().queryIntentActivities(intent,
-                    PackageManager.MATCH_DEFAULT_ONLY).isEmpty()) {
-                return;
-            }
-
-            FeatureFactory.getFactory(context).getSlicesFeatureProvider()
-                    .indexSliceDataAsync(context);
-            FeatureFactory.getFactory(context).getMetricsFeatureProvider()
-                    .action(context, SettingsEnums.ACTION_SEARCH_RESULTS);
-            activity.startActivityForResult(intent, REQUEST_CODE);
+            showSearchPage(activity, pageId);
         });
+    }
+
+    default void showSearchPage(Activity activity, int pageId) {
+        final Context context = activity.getApplicationContext();
+        final Intent intent = buildSearchIntent(context, pageId);
+
+        if (activity.getPackageManager().queryIntentActivities(intent,
+                PackageManager.MATCH_DEFAULT_ONLY).isEmpty()) {
+            return;
+        }
+
+        FeatureFactory.getFactory(context).getSlicesFeatureProvider()
+                .indexSliceDataAsync(context);
+        FeatureFactory.getFactory(context).getMetricsFeatureProvider()
+                .action(context, SettingsEnums.ACTION_SEARCH_RESULTS);
+        activity.startActivityForResult(intent, REQUEST_CODE);
     }
 
     Intent buildSearchIntent(Context context, int pageId);
