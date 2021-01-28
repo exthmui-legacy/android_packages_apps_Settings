@@ -40,7 +40,7 @@ public class exTHmRecommendedPreference extends Preference {
         }
 
         for (int i = 0; i < arrEntries.length; i++) {
-            String[] val = arrValues[i].toString().split("|");
+            String[] val = arrValues[i].toString().split("\\|");
             Intent intent = new Intent();
             ComponentName cn;
             if (val.length == 1) {
