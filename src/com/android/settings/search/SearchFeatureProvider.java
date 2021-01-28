@@ -101,5 +101,34 @@ public interface SearchFeatureProvider {
         });
     }
 
+    default void initSearchToolbar(Activity activity, int pageId) {
+        if (activity == null) {
+            return;
+        }
+
+        if (!Utils.isDeviceProvisioned(activity) ||
+                !Utils.isPackageEnabled(activity, getSettingsIntelligencePkgName(activity))) {
+            return;
+        }
+        // Please forgive me for what I am about to do.
+        //
+        // Need to make the navigation icon non-clickable so that the entire card is clickable
+        // and goes to the search UI. Also set the background to null so there's no ripple.
+
+            final Context context = activity.getApplicationContext();
+            final Intent intent = buildSearchIntent(context, pageId);
+
+            if (activity.getPackageManager().queryIntentActivities(intent,
+                    PackageManager.MATCH_DEFAULT_ONLY).isEmpty()) {
+                return;
+            }
+
+            FeatureFactory.getFactory(context).getSlicesFeatureProvider()
+                    .indexSliceDataAsync(context);
+            FeatureFactory.getFactory(context).getMetricsFeatureProvider()
+                    .action(context, SettingsEnums.ACTION_SEARCH_RESULTS);
+            activity.startActivityForResult(intent, REQUEST_CODE);
+    }
+
     Intent buildSearchIntent(Context context, int pageId);
 }

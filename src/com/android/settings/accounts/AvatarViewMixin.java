@@ -25,11 +25,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.ImageView;
+import android.view.MenuItem;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.lifecycle.Lifecycle;
@@ -63,17 +64,17 @@ public class AvatarViewMixin implements LifecycleObserver {
     private static final String EXTRA_ACCOUNT_NAME = "extra.accountName";
 
     private final Context mContext;
-    private final ImageView mAvatarView;
+    private final MenuItem mAvatarItem;
     private final MutableLiveData<Bitmap> mAvatarImage;
     private final ActivityManager mActivityManager;
 
     private String mAccountName;
 
-    public AvatarViewMixin(SettingsHomepageActivity activity, ImageView avatarView) {
+    public AvatarViewMixin(SettingsHomepageActivity activity, MenuItem avatarItem) {
         mContext = activity.getApplicationContext();
         mActivityManager = mContext.getSystemService(ActivityManager.class);
-        mAvatarView = avatarView;
-        mAvatarView.setOnClickListener(v -> {
+        mAvatarItem = avatarItem;
+        mAvatarItem.setOnMenuItemClickListener(item -> {
             Intent intent;
             try {
                 final String uri = mContext.getResources().getString(
@@ -81,7 +82,7 @@ public class AvatarViewMixin implements LifecycleObserver {
                 intent = Intent.parseUri(uri, Intent.URI_INTENT_SCHEME);
             } catch (URISyntaxException e) {
                 Log.w(TAG, "Error parsing avatar mixin intent, skipping", e);
-                return;
+                return false;
             }
 
             if (!TextUtils.isEmpty(mAccountName)) {
@@ -93,7 +94,7 @@ public class AvatarViewMixin implements LifecycleObserver {
                             PackageManager.MATCH_SYSTEM_ONLY);
             if (matchedIntents.isEmpty()) {
                 Log.w(TAG, "Cannot find any matching action VIEW_ACCOUNT intent.");
-                return;
+                return false;
             }
 
             final MetricsFeatureProvider metricsFeatureProvider = FeatureFactory.getFactory(
@@ -106,11 +107,12 @@ public class AvatarViewMixin implements LifecycleObserver {
             // It will display adding account UI when device has no any account.
             // It will display account information page when intent added the specified account.
             activity.startActivity(intent);
+            return true;
         });
 
         mAvatarImage = new MutableLiveData<>();
         mAvatarImage.observe(activity, bitmap -> {
-            avatarView.setImageBitmap(bitmap);
+            avatarItem.setIcon(new BitmapDrawable(bitmap));
         });
     }
 
@@ -127,13 +129,13 @@ public class AvatarViewMixin implements LifecycleObserver {
         if (hasAccount()) {
             loadAccount();
         } else {
-            mAvatarView.setImageResource(R.drawable.ic_account_circle_24dp);
+            mAvatarItem.setIcon(R.drawable.ic_account_circle_24dp);
         }
     }
 
     @VisibleForTesting
     boolean hasAccount() {
-        final Account accounts[] = FeatureFactory.getFactory(
+        final Account[] accounts = FeatureFactory.getFactory(
                 mContext).getAccountFeatureProvider().getAccounts(mContext);
         return (accounts != null) && (accounts.length > 0);
     }

@@ -112,6 +112,8 @@
     <dimen name="switchbar_subsettings_margin_start">72dp</dimen>
     <dimen name="switchbar_subsettings_margin_end">16dp</dimen>
 
+    <dimen name="homepage_screen_padding_top">8dp</dimen>
+
     <dimen name="search_bar_margin">16dp</dimen>
 
     <dimen name="search_bar_height">48dp</dimen>
