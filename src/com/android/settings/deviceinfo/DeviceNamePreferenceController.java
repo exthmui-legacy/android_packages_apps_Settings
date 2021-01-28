@@ -70,6 +70,7 @@ public class DeviceNamePreferenceController extends BasePreferenceController
         mPreference.setSummary(deviceName);
         mPreference.setText(deviceName.toString());
         mPreference.setValidator(this);
+        mPreference.setIsEditDeviceName(true);
     }
 
     private void initializeDeviceName() {
