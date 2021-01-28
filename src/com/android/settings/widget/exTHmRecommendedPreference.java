@@ -133,7 +133,7 @@ public class exTHmRecommendedPreference extends Preference {
             this.mEntities.clear();
             if (list != null) {
                 this.mEntities.addAll(list);
-                this.mEntities.add(0, new RecommendedEntity("你可能想找：", null, "", ""));
+                this.mEntities.add(0, new RecommendedEntity(mContext.getString(R.string.recommended_settings), null, "", ""));
             }
             notifyDataSetChanged();
         }

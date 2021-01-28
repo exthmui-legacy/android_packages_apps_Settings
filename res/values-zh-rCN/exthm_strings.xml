@@ -41,4 +41,6 @@
 
     <string name="wifi_tether_client_list_title">客户端列表</string>
     <string name="wifi_tether_client_list_summary">管理已连接到热点的设备</string>
+
+    <string name="recommended_settings">你可能想找：</string>
 </resources>

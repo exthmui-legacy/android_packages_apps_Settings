@@ -41,4 +41,6 @@
 
     <string name="wifi_tether_client_list_title">Client List</string>
     <string name="wifi_tether_client_list_summary">Manage clients connected to hotspot</string>
+
+    <string name="recommended_settings">You might be looking for:</string>
 </resources>
