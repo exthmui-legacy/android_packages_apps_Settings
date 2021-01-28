@@ -15,9 +15,12 @@
  */
 package com.android.settings.network;
 
+import static com.android.settings.network.MobilePlanPreferenceController.MANAGE_MOBILE_PLAN_DIALOG_ID;
+
 import android.app.Dialog;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.provider.SearchIndexableResource;
 import android.util.Log;
 
@@ -25,10 +28,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.android.settings.R;
+import com.android.settings.bluetooth.BluetoothFilesPreferenceController;
 import com.android.settings.core.FeatureFlags;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.development.featureflags.FeatureFlagPersistent;
 import com.android.settings.network.MobilePlanPreferenceController.MobilePlanPreferenceHost;
+import com.android.settings.nfc.AndroidBeamPreferenceController;
+import com.android.settings.print.PrintSettingPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.wifi.WifiMasterSwitchPreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -39,8 +45,6 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static com.android.settings.network.MobilePlanPreferenceController.MANAGE_MOBILE_PLAN_DIALOG_ID;
 
 @SearchIndexable
 public class NetworkDashboardFragment extends DashboardFragment implements
@@ -125,6 +129,8 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(new ProxyPreferenceController(context));
         controllers.add(mobilePlanPreferenceController);
         controllers.add(privateDnsPreferenceController);
+        controllers.add(new NetworkBottomRecommendedController(context));
+
         return controllers;
     }
 
