@@ -24,6 +24,7 @@ import android.os.Bundle;
 import com.android.settings.R;
 import com.android.settings.SettingsActivity;
 import com.android.settings.bluetooth.BluetoothDeviceRenamePreferenceController;
+import com.android.settings.bluetooth.BluetoothFilesPreferenceController;
 import com.android.settings.bluetooth.BluetoothSwitchPreferenceController;
 import com.android.settings.core.TogglePreferenceController;
 import com.android.settings.dashboard.DashboardFragment;
@@ -31,6 +32,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.SearchIndexableRaw;
 import com.android.settings.widget.SwitchBar;
 import com.android.settings.widget.SwitchBarController;
+import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.widget.FooterPreference;
@@ -70,6 +72,21 @@ public class BluetoothDashboardFragment extends DashboardFragment {
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.bluetooth_screen;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle());
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(Context context,
+                                                                                 Lifecycle lifecycle) {
+
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+
+        controllers.add(new BluetoothFilesPreferenceController(context));
+
+        return controllers;
     }
 
     @Override
