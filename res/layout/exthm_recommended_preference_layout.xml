@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ContextualCardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="false"
+    android:clipChildren="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    app:cardCornerRadius="8dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recommended_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="false"
+        android:clipChildren="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:forceDarkAllowed="false"
+        android:paddingStart="24dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="14dp" />
+
+</com.google.android.material.card.MaterialCardView>
