@@ -179,7 +179,7 @@
         <!-- Wireless Controls -->
         <activity
             android:name=".Settings$NetworkDashboardActivity"
-            android:label="@string/network_dashboard_title"
+            android:label="@string/more_connection"
             android:icon="@drawable/ic_homepage_network"
             android:parentActivityName="Settings">
             <intent-filter android:priority="1">
@@ -393,18 +393,17 @@
         </activity>
 
         <!-- Keep compatibility with old shortcuts. -->
-        <activity-alias
+        <activity
             android:name="Settings$BluetoothSettingsActivity"
             android:label="@string/devices_title"
-            android:targetActivity=".Settings$ConnectedDeviceDashboardActivity"
             android:exported="true">
             <intent-filter android:priority="10">
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment" />
-        </activity-alias>
+                android:value="com.android.settings.connecteddevice.BluetoothDashboardFragment" />
+        </activity>
 
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name=".bluetooth.BluetoothSettings"
