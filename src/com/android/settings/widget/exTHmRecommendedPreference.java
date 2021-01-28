@@ -32,8 +32,14 @@ public class exTHmRecommendedPreference extends Preference {
         setLayoutResource(R.layout.exthm_recommended_preference_layout);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RecommendedPreference, defStyleAttr, defStyleRes);
-        CharSequence[] arrEntries = TypedArrayUtils.getTextArray(typedArray, R.styleable.RecommendedPreference_entries, 0);
-        CharSequence[] arrValues = TypedArrayUtils.getTextArray(typedArray, R.styleable.RecommendedPreference_entryValues, 0);
+        CharSequence[] arrEntries = TypedArrayUtils.getTextArray(
+                                        typedArray,
+                                        R.styleable.RecommendedPreference_entries,
+                                        R.styleable.RecommendedPreference_android_entries);
+        CharSequence[] arrValues = TypedArrayUtils.getTextArray(
+                                        typedArray, 
+                                        R.styleable.RecommendedPreference_entryValues,
+                                        R.styleable.RecommendedPreference_android_entryValues);
 
         if (arrEntries == null || arrValues == null) {
             return;

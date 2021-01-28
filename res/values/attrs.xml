@@ -182,6 +182,7 @@
         <!-- The human-readable array to present as a list. Each entry must have a corresponding
              index in entryValues. -->
         <attr name="entries" format="reference" />
+        <attr name="android:entries" format="reference" />
         <!-- The array to find the activity to start for a preference when an entry from
              entries is clicked. 
              Format:
@@ -190,5 +191,6 @@
                 PackageName|ActivityClassName
         -->
         <attr name="entryValues" format="reference" />
+        <attr name="android:entryValues" format="reference" />
     </declare-styleable>
 </resources>
