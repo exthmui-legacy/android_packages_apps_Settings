@@ -30,6 +30,7 @@ public class exTHmRecommendedPreference extends Preference {
     public exTHmRecommendedPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         setLayoutResource(R.layout.exthm_recommended_preference_layout);
+        setOrder(DEFAULT_ORDER - 1);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RecommendedPreference, defStyleAttr, defStyleRes);
         CharSequence[] arrEntries = TypedArrayUtils.getTextArray(
