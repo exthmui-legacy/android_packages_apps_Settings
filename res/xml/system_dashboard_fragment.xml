@@ -18,16 +18,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="system_dashboard_screen"
-    android:title="@string/header_category_system"
-    settings:initialExpandedChildrenCount="4">
-
-    <Preference
-        android:key="gesture_settings"
-        android:title="@string/gesture_preference_title"
-        android:icon="@drawable/ic_settings_gestures"
-        android:order="-250"
-        android:fragment="com.android.settings.gestures.GestureSettings"
-        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
+    android:title="@string/more_settings">
 
     <Preference
         android:key="reset_dashboard"
@@ -37,18 +28,6 @@
         android:order="-50"
         android:fragment="com.android.settings.system.ResetDashboardFragment"
         settings:controller="com.android.settings.system.ResetPreferenceController"/>
-
-    <!-- System updates -->
-    <Preference
-        android:key="system_update_settings"
-        android:title="@string/system_update_settings_list_item_title"
-        android:summary="@string/summary_placeholder"
-        android:icon="@drawable/ic_system_update"
-        android:order="-30"
-        settings:keywords="@string/keywords_system_update_settings"
-        settings:controller="com.android.settings.system.SystemUpdatePreferenceController">
-        <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
-    </Preference>
 
     <Preference
         android:key="additional_system_update_settings"
