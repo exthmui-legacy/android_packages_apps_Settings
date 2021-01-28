@@ -25,11 +25,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceViewHolder;
 
+import com.android.settings.R;
 import com.android.settingslib.CustomEditTextPreferenceCompat;
 
 /**
@@ -45,6 +47,7 @@ public class ValidatedEditTextPreference extends CustomEditTextPreferenceCompat 
     private Validator mValidator;
     private boolean mIsPassword;
     private boolean mIsSummaryPassword;
+    private boolean mIsEditDeviceName;
 
     public ValidatedEditTextPreference(Context context, AttributeSet attrs,
             int defStyleAttr, int defStyleRes) {
@@ -78,6 +81,9 @@ public class ValidatedEditTextPreference extends CustomEditTextPreferenceCompat 
                 editText.setMaxLines(1);
             }
             editText.addTextChangedListener(mTextWatcher);
+            if (mIsEditDeviceName) {
+                Toast.makeText(view.getContext(), R.string.about_phone_device_name_warning, Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -96,6 +102,10 @@ public class ValidatedEditTextPreference extends CustomEditTextPreferenceCompat 
             textView.setInputType(
                     InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
         }
+    }
+
+    public void setIsEditDeviceName(boolean isEditDeviceName) {
+        this.mIsEditDeviceName = isEditDeviceName;
     }
 
     public void setIsPassword(boolean isPassword) {
