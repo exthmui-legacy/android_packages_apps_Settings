@@ -108,10 +108,6 @@ public class exTHmRecommendedPreference extends Preference {
             this.mIntent = intent;
         }
 
-        public RecommendedEntity(String str, Intent intent, String str2, String str3) {
-            this(str, intent);
-        }
-
         public CharSequence getTitle() {
             return this.mTitle;
         }
@@ -138,7 +134,7 @@ public class exTHmRecommendedPreference extends Preference {
         private void setData(List<RecommendedEntity> list) {
             this.mEntities.clear();
             if (list != null) {
-                this.mEntities.add(0, new RecommendedEntity(mContext.getString(R.string.recommended_settings), null, "", ""));
+                this.mEntities.add(0, new RecommendedEntity(mContext.getString(R.string.recommended_settings), null));
                 this.mEntities.addAll(list);
             }
             notifyDataSetChanged();

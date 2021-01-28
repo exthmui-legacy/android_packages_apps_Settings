@@ -129,7 +129,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(new ProxyPreferenceController(context));
         controllers.add(mobilePlanPreferenceController);
         controllers.add(privateDnsPreferenceController);
-        controllers.add(new NetworkBottomRecommendedController(context));
 
         final PrintSettingPreferenceController printerController =
                 new PrintSettingPreferenceController(context);

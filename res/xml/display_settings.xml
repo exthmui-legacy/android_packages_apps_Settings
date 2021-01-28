@@ -185,6 +185,8 @@
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
 
     <com.android.settings.widget.exTHmRecommendedPreference
-        android:key="display_recommended_key"/>
+        android:key="display_recommended_key"
+        android:entries="@array/recommended_display_entries"
+        android:entryValues="@array/recommended_display_values" />
 
 </PreferenceScreen>
