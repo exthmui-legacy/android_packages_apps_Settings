@@ -1372,7 +1372,7 @@
     <string name="device_status" msgid="7988547478034984649">"状态信息"</string>
     <string name="device_status_summary" product="tablet" msgid="8826216824111648900">"电池状态、网络状态和其他信息"</string>
     <string name="device_status_summary" product="default" msgid="8132661857066128832">"电话号码、信号等"</string>
-    <string name="storage_settings" msgid="7472188817781592677">"存储"</string>
+    <string name="storage_settings" msgid="7472188817781592677">"存储空间"</string>
     <string name="storage_settings_for_app" msgid="229425418984637483">"存储和缓存"</string>
     <string name="storage_usb_settings" msgid="7058142934214211583">"存储"</string>
     <string name="storage_settings_title" msgid="486118156723194815">"存储设置"</string>
@@ -4670,4 +4670,9 @@
     <string name="rtt_settings_no_visible" msgid="7440356831140948382"></string>
     <string name="rtt_settings_visible_during_call" msgid="7866181103286073700"></string>
     <string name="rtt_settings_always_visible" msgid="2364173070088756238"></string>
+
+    <string name="device_and_security_settings">设备与安全</string>
+    <string name="more_connection">更多连接</string>
+    <string name="more_settings">更多设置</string>
+    <string name="about_exthmui">关于 exTHmUI</string>
 </resources>

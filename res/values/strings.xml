@@ -11426,4 +11426,8 @@
     <!-- Subtext for showing the option of RTT setting. [CHAR LIMIT=NONE] -->
     <string name="rtt_settings_always_visible"></string>
 
+    <string name="device_and_security_settings">Device &amp; Security</string>
+    <string name="more_connection">More connections</string>
+    <string name="more_settings">More settings</string>
+    <string name="about_exthmui">About exTHmUI</string>
 </resources>
