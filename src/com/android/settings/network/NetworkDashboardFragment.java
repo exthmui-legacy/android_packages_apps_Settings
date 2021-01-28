@@ -131,6 +131,14 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(privateDnsPreferenceController);
         controllers.add(new NetworkBottomRecommendedController(context));
 
+        final PrintSettingPreferenceController printerController =
+                new PrintSettingPreferenceController(context);
+
+        if (lifecycle != null) {
+            lifecycle.addObserver(printerController);
+        }
+        controllers.add(printerController);
+
         return controllers;
     }
 
@@ -191,7 +199,10 @@ public class NetworkDashboardFragment extends DashboardFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     // Remove master switch as a result
-                    keys.add(WifiMasterSwitchPreferenceController.KEY_TOGGLE_WIFI);
+                    PackageManager pm = context.getPackageManager();
+                    if (!pm.hasSystemFeature(PackageManager.FEATURE_NFC)) {
+                        keys.add(AndroidBeamPreferenceController.KEY_ANDROID_BEAM_SETTINGS);
+                    }
                     return keys;
                 }
             };
