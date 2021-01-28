@@ -83,10 +83,15 @@
 
     <!-- Dashboard/homepage icon background colors -->
     <color name="homepage_network_background">#2196F3</color>
+    <color name="homepage_mobile_network_background">#21cd93</color>
     <color name="homepage_connected_device_background">#72B70F</color>
+    <color name="homepage_bluetooth_background">#0069b5</color>
+    <color name="homepage_more_background">#acb7af</color>
     <color name="homepage_app_and_notification_background">#FF7E0F</color>
+    <color name="homepage_notification_background">#e33214</color>
     <color name="homepage_battery_background">#258982</color>
     <color name="homepage_display_background">#FFA727</color>
+    <color name="homepage_gesture_background">#27897f</color>
     <color name="homepage_sound_background">#01B1AF</color>
     <color name="homepage_storage_background">#C14CE6</color>
     <color name="homepage_security_background">#0F9D58</color>
