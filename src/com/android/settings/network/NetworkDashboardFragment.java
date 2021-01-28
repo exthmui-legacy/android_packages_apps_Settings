@@ -15,8 +15,6 @@
  */
 package com.android.settings.network;
 
-import static com.android.settings.network.MobilePlanPreferenceController.MANAGE_MOBILE_PLAN_DIALOG_ID;
-
 import android.app.Dialog;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
@@ -41,6 +39,8 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.android.settings.network.MobilePlanPreferenceController.MANAGE_MOBILE_PLAN_DIALOG_ID;
 
 @SearchIndexable
 public class NetworkDashboardFragment extends DashboardFragment implements
@@ -93,8 +93,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
             MobilePlanPreferenceHost mobilePlanHost) {
         final MobilePlanPreferenceController mobilePlanPreferenceController =
                 new MobilePlanPreferenceController(context, mobilePlanHost);
-        final WifiMasterSwitchPreferenceController wifiPreferenceController =
-                new WifiMasterSwitchPreferenceController(context, metricsFeatureProvider);
         MobileNetworkPreferenceController mobileNetworkPreferenceController = null;
         if (!FeatureFlagPersistent.isEnabled(context, FeatureFlags.NETWORK_INTERNET_V2)) {
             mobileNetworkPreferenceController = new MobileNetworkPreferenceController(context);
@@ -107,7 +105,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
 
         if (lifecycle != null) {
             lifecycle.addObserver(mobilePlanPreferenceController);
-            lifecycle.addObserver(wifiPreferenceController);
             if (mobileNetworkPreferenceController != null) {
                 lifecycle.addObserver(mobileNetworkPreferenceController);
             }
@@ -127,7 +124,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(vpnPreferenceController);
         controllers.add(new ProxyPreferenceController(context));
         controllers.add(mobilePlanPreferenceController);
-        controllers.add(wifiPreferenceController);
         controllers.add(privateDnsPreferenceController);
         return controllers;
     }

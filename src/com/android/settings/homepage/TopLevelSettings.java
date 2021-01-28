@@ -16,9 +16,6 @@
 
 package com.android.settings.homepage;
 
-import static com.android.settings.search.actionbar.SearchMenuController.NEED_SEARCH_ICON_IN_ACTION_BAR;
-import static com.android.settingslib.search.SearchIndexable.MOBILE;
-
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.os.Bundle;
@@ -29,15 +26,27 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.settings.R;
+import com.android.settings.core.FeatureFlags;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.development.featureflags.FeatureFlagPersistent;
+import com.android.settings.network.MobileNetworkPreferenceController;
+import com.android.settings.network.MobileNetworkSummaryController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.support.SupportPreferenceController;
+import com.android.settings.wifi.WifiMasterSwitchPreferenceController;
+import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.instrumentation.Instrumentable;
+import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.android.settings.search.actionbar.SearchMenuController.NEED_SEARCH_ICON_IN_ACTION_BAR;
+import static com.android.settingslib.search.SearchIndexable.MOBILE;
 
 @SearchIndexable(forTarget = MOBILE)
 public class TopLevelSettings extends DashboardFragment implements
@@ -71,6 +80,41 @@ public class TopLevelSettings extends DashboardFragment implements
     public void onAttach(Context context) {
         super.onAttach(context);
         use(SupportPreferenceController.class).setActivity(getActivity());
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle(), mMetricsFeatureProvider,
+                this /* fragment */ /* mobilePlanHost */);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(Context context,
+                   Lifecycle lifecycle, MetricsFeatureProvider metricsFeatureProvider, Fragment fragment) {
+        final WifiMasterSwitchPreferenceController wifiPreferenceController =
+                new WifiMasterSwitchPreferenceController(context, metricsFeatureProvider);
+        MobileNetworkPreferenceController mobileNetworkPreferenceController = null;
+        if (!FeatureFlagPersistent.isEnabled(context, FeatureFlags.NETWORK_INTERNET_V2)) {
+            mobileNetworkPreferenceController = new MobileNetworkPreferenceController(context);
+        }
+
+        if (lifecycle != null) {
+            lifecycle.addObserver(wifiPreferenceController);
+            if (mobileNetworkPreferenceController != null) {
+                lifecycle.addObserver(mobileNetworkPreferenceController);
+            }
+        }
+
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+
+        if (FeatureFlagPersistent.isEnabled(context, FeatureFlags.NETWORK_INTERNET_V2)) {
+            controllers.add(new MobileNetworkSummaryController(context, lifecycle));
+        }
+        if (mobileNetworkPreferenceController != null) {
+            controllers.add(mobileNetworkPreferenceController);
+        }
+
+        controllers.add(wifiPreferenceController);
+        return controllers;
     }
 
     @Override
