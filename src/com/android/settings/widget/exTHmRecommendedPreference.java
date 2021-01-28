@@ -132,8 +132,8 @@ public class exTHmRecommendedPreference extends Preference {
         private void setData(List<RecommendedEntity> list) {
             this.mEntities.clear();
             if (list != null) {
-                this.mEntities.addAll(list);
                 this.mEntities.add(0, new RecommendedEntity(mContext.getString(R.string.recommended_settings), null, "", ""));
+                this.mEntities.addAll(list);
             }
             notifyDataSetChanged();
         }
