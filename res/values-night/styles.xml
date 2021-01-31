@@ -18,7 +18,6 @@
 <resources>
 
 <style name="Widget.ActionBar.Base" parent="@android:style/Widget.DeviceDefault.ActionBar.Solid">
-  <item name="android:background">?android:attr/colorPrimaryDark</item>
 </style>
 
 </resources>
