@@ -8,5 +8,5 @@
     android:minHeight="20dp"
     android:orientation="vertical"
     android:textAlignment="viewStart"
-    android:textColor="#73000000"
+    android:textColor="?android:attr/textColorSecondary"
     android:textSize="12sp" />
