@@ -24,6 +24,7 @@
         android:icon="@drawable/ic_homepage_wireless"
         android:key="toggle_wifi"
         android:title="@string/wifi_settings"
+        android:order="-140"
         settings:allowDividerAbove="true">
         <intent
             android:action="android.settings.WIFI_SETTINGS"
@@ -36,6 +37,7 @@
         android:key="mobile_network_list"
         android:title="@string/network_settings_title"
         settings:keywords="@string/keywords_more_mobile_networks"
+        android:order="-130"
         settings:useAdminDisabledSummary="true"
         settings:userRestriction="no_config_mobile_networks" />
 
@@ -44,6 +46,7 @@
         android:fragment="com.android.settings.connecteddevice.BluetoothDashboardFragment"
         android:icon="@drawable/ic_homepage_bluetooth"
         android:key="bluetooth_settings"
+        android:order="-120"
         android:title="@string/bluetooth_settings_title" />
 
     <!--更多连接-->
@@ -52,6 +55,7 @@
         android:icon="@drawable/ic_homepage_more"
         android:key="top_level_network"
         android:title="@string/more_connection"
+        android:order="-110"
         settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController" />
 
     <!--声音、振动与勿扰-->
@@ -60,6 +64,7 @@
         android:icon="@drawable/ic_homepage_sound"
         android:key="top_level_sound"
         android:title="@string/sound_settings"
+        android:order="-100"
         settings:allowDividerAbove="true" />
 
     <!--显示、亮度-->
@@ -68,6 +73,7 @@
         android:icon="@drawable/ic_homepage_display"
         android:key="top_level_display"
         android:title="@string/display_settings"
+        android:order="-90"
         settings:controller="com.android.settings.display.TopLevelDisplayPreferenceController" />
 
     <!--样式与壁纸-->
@@ -77,6 +83,7 @@
         android:title="@string/wallpaper_settings_title"
         settings:controller="com.android.settings.display.WallpaperPreferenceController"
         settings:keywords="@string/keywords_display_wallpaper"
+        android:order="-80"
         settings:useAdminDisabledSummary="true" />
 
     <!--Notification-->
@@ -85,6 +92,7 @@
         android:icon="@drawable/ic_homepage_notifications"
         android:key="top_level_notification_settings"
         android:title="@string/configure_notification_settings"
+        android:order="-70"
         settings:allowDividerAbove="true" />
 
     <!--Will be change to 'App Manage'-->
@@ -92,6 +100,7 @@
         android:fragment="com.android.settings.applications.AppAndNotificationDashboardFragment"
         android:icon="@drawable/ic_homepage_apps"
         android:key="top_level_apps_and_notifs"
+        android:order="-60"
         android:title="@string/app_and_notification_dashboard_title" />
 
     <!--电池-->
@@ -100,6 +109,7 @@
         android:icon="@drawable/ic_homepage_battery"
         android:key="top_level_battery"
         android:title="@string/power_usage_summary_title"
+        android:order="-50"
         settings:controller="com.android.settings.fuelgauge.TopLevelBatteryPreferenceController" />
 
     <!--存储-->
@@ -108,6 +118,7 @@
         android:icon="@drawable/ic_homepage_storage"
         android:key="top_level_storage"
         android:title="@string/storage_settings"
+        android:order="-40"
         settings:controller="com.android.settings.deviceinfo.TopLevelStoragePreferenceController" />
 
     <!--无障碍-->
@@ -117,6 +128,7 @@
         android:key="top_level_accessibility"
         android:title="@string/accessibility_settings"
         settings:allowDividerAbove="true"
+        android:order="-30"
         settings:controller="com.android.settings.accessibility.TopLevelAccessibilityPreferenceController" />
 
     <!--手势-->
@@ -125,6 +137,7 @@
         android:icon="@drawable/ic_homepage_gesture"
         android:key="gesture_settings"
         android:title="@string/gesture_preference_title"
+        android:order="-25"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController" />
 
     <!--指纹与密码-->
@@ -134,6 +147,7 @@
         android:key="top_level_security"
         android:title="@string/device_and_security_settings"
         settings:allowDividerAbove="true"
+        android:order="-20"
         settings:controller="com.android.settings.security.TopLevelSecurityEntryPreferenceController" />
 
     <!--隐私权-->
@@ -141,6 +155,7 @@
         android:fragment="com.android.settings.privacy.PrivacyDashboardFragment"
         android:icon="@drawable/ic_homepage_privacy"
         android:key="top_level_privacy"
+        android:order="-15"
         android:title="@string/privacy_dashboard_title" />
 
     <!--定位-->
@@ -149,6 +164,7 @@
         android:icon="@drawable/ic_homepage_location"
         android:key="top_level_location"
         android:title="@string/location_settings_title"
+        android:order="-10"
         settings:controller="com.android.settings.location.TopLevelLocationPreferenceController" />
 
     <!--帐号-->
@@ -157,6 +173,7 @@
         android:icon="@drawable/ic_homepage_accounts"
         android:key="top_level_accounts"
         android:title="@string/account_dashboard_title"
+        android:order="-5"
         settings:controller="com.android.settings.accounts.TopLevelAccountEntryPreferenceController" />
 
     <!--exTHmUI 设置-->
@@ -164,6 +181,7 @@
         android:fragment="org.exthmui.settings.exTHmSettings"
         android:icon="@drawable/ic_homepage_exthmui"
         android:key="top_level_exthm_settings"
+        android:order="10"
         android:title="@string/exthmui_settings_title" />
 
     <!--更多-->
@@ -171,6 +189,7 @@
         android:fragment="com.android.settings.system.SystemDashboardFragment"
         android:icon="@drawable/ic_homepage_system_dashboard"
         android:key="top_level_system"
+        android:order="15"
         android:title="@string/more_settings" />
 
     <!--关于手机-->
@@ -180,6 +199,7 @@
         android:key="top_level_about_device"
         android:title="@string/about_settings"
         settings:allowDividerAbove="true"
+        android:order="20"
         settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController" />
 
     <Preference
