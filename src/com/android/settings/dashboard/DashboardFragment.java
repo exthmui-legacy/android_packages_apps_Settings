@@ -72,6 +72,8 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
     @VisibleForTesting
     UiBlockerController mBlockerController;
 
+    private boolean mIsInHomePage;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -79,6 +81,7 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                 R.array.config_suppress_injected_tile_keys));
         mDashboardFeatureProvider = FeatureFactory.getFactory(context).
                 getDashboardFeatureProvider(context);
+        mDashboardFeatureProvider.setInHomePage(mIsInHomePage);
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         // Load preference controllers from code
         final List<AbstractPreferenceController> controllersFromCode =
@@ -158,6 +161,10 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         refreshAllPreferences(getLogTag());
+    }
+
+    public void setInHomePage(boolean val) {
+        mIsInHomePage = val;
     }
 
     @Override

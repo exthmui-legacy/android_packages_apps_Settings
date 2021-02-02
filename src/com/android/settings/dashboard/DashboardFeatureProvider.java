@@ -63,4 +63,6 @@ public interface DashboardFeatureProvider {
      */
     void openTileIntent(FragmentActivity activity, Tile tile);
 
+    void setInHomePage(boolean val);
+    boolean isInHomePage();
 }

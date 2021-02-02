@@ -59,6 +59,7 @@ public class TopLevelSettings extends DashboardFragment implements
         // Disable the search icon because this page uses a full search view in actionbar.
         args.putBoolean(NEED_SEARCH_ICON_IN_ACTION_BAR, false);
         setArguments(args);
+        setInHomePage(true);
     }
 
     @Override
