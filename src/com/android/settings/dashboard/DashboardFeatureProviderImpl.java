@@ -41,6 +41,7 @@ import android.content.Context;
 import android.content.IContentProvider;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
@@ -427,11 +428,14 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
             }
         }
 
+        if (icon instanceof BitmapDrawable) {
+            return;
+        }
+
         final int[] iconFgColors = context.getResources().getIntArray(R.array.homepage_icon_fg_colors);
         int hashCode = preference.getKey().hashCode();
         final int index = Math.abs(hashCode % iconFgColors.length);
         icon.setTint(iconFgColors[index]);
-
     }
 
     private void launchIntentOrSelectProfile(FragmentActivity activity, Tile tile, Intent intent,
