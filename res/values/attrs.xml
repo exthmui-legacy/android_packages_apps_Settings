@@ -185,10 +185,14 @@
         <attr name="android:entries" format="reference" />
         <!-- The array to find the activity to start for a preference when an entry from
              entries is clicked. 
-             Format:
+            Format:
                 ActivityClassName
-                or
                 PackageName|ActivityClassName
+                PackageName|ActivityClassName|FragmentClassName
+            Example:
+                com.android.settings.Settings$WifiSettingsActivity
+                com.android.settings|com.android.Settings$WifiSettingsActivity
+                com.android.settings|com.android.settings.SubSettings|com.android.settings.dream.DreamSettings
         -->
         <attr name="entryValues" format="reference" />
         <attr name="android:entryValues" format="reference" />

@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.settings.Utils;
 
 import com.android.settings.R;
+import com.android.settings.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,12 +50,19 @@ public class exTHmRecommendedPreference extends Preference {
         for (int i = 0; i < arrEntries.length; i++) {
             String[] val = arrValues[i].toString().split("\\|");
             Intent intent = new Intent();
-            ComponentName cn;
+            String packageName, className;
             if (val.length == 1) {
-                cn = new ComponentName(context, val[0]);
+                packageName = context.getPackageName();
+                className = val[0];
+            } else if (val.length == 2) {
+                packageName = val[0];
+                className = val[1];
             } else {
-                cn = new ComponentName(val[0], val[1]);
+                packageName = val[0];
+                className = val[1];
+                intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, val[2]);
             }
+            ComponentName cn = new ComponentName(packageName, className);
             intent.setComponent(cn);
             mRecommendedEntityList.add(new RecommendedEntity(arrEntries[i], intent));
         }
