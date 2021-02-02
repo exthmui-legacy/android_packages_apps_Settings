@@ -27,6 +27,8 @@ import static com.android.settingslib.drawer.SwitchesProvider.METHOD_GET_PROVIDE
 import static com.android.settingslib.drawer.SwitchesProvider.METHOD_IS_CHECKED;
 import static com.android.settingslib.drawer.SwitchesProvider.METHOD_ON_CHECKED_CHANGED;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_ICON_URI;
+import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_ICON_BACKGROUND_ARGB;
+import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_ICON_BACKGROUND_HINT;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_SUMMARY;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_SUMMARY_URI;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_SWITCH_URI;
@@ -366,6 +368,8 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
                     && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);
                 ((AdaptiveIcon) iconDrawable).setBackgroundColor(mContext, tile);
+            } else {
+                setIconColor(iconDrawable, preference, tile);
             }
             preference.setIcon(iconDrawable);
         } else if (tile.getMetaData() != null
@@ -393,6 +397,41 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
                 );
             });
         }
+    }
+
+    private void setIconColor(Drawable icon, Preference preference, Tile tile) {
+        final Bundle metaData = tile.getMetaData();
+        final Context context = preference.getContext();
+        if (metaData != null) {
+            // Load from bg.argb first
+            int bgColor = metaData.getInt(META_DATA_PREFERENCE_ICON_BACKGROUND_ARGB,
+                    0 /* default */);
+            // Not found, load from bg.hint
+            if (bgColor == 0) {
+                final int colorRes = metaData.getInt(META_DATA_PREFERENCE_ICON_BACKGROUND_HINT,
+                        0 /* default */);
+                if (colorRes != 0) {
+                    try {
+                        bgColor = context.getPackageManager()
+                                .getResourcesForApplication(tile.getPackageName())
+                                .getColor(colorRes, null /* theme */);
+                    } catch (Exception e) {
+                        bgColor = 0;
+                    }
+                }
+            }
+            // If found anything, use it.
+            if (bgColor != 0) {
+                icon.setTint(bgColor);
+                return;
+            }
+        }
+
+        final int[] iconFgColors = context.getResources().getIntArray(R.array.homepage_icon_fg_colors);
+        int hashCode = preference.getKey().hashCode();
+        final int index = Math.abs(hashCode % iconFgColors.length);
+        icon.setTint(iconFgColors[index]);
+
     }
 
     private void launchIntentOrSelectProfile(FragmentActivity activity, Tile tile, Intent intent,

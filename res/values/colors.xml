@@ -174,4 +174,11 @@
     <color name="palette_list_dark_mode_color_blue">#8AB4F8</color> <!-- Material Blue 300 -->
     <color name="palette_list_dark_mode_color_purple">#c58af9</color> <!-- Material Purple 300 -->
 
+    <color name="homepage_color_fg_1">#2196F3</color>
+    <color name="homepage_color_fg_2">#0d652d</color>
+    <color name="homepage_color_fg_3">#e37400</color>
+    <color name="homepage_color_fg_4">#b06000</color>
+    <color name="homepage_color_fg_5">#9c166b</color>
+    <color name="homepage_color_fg_6">#681da8</color>
+    <color name="homepage_color_fg_7">#007b83</color>
 </resources>
