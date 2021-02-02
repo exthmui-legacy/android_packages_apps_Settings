@@ -1431,4 +1431,13 @@
         <item>@string/rtt_settings_always_visible</item>
     </string-array>
 
+    <integer-array name="homepage_icon_fg_colors">
+        <item>@color/homepage_color_fg_1</item>
+        <item>@color/homepage_color_fg_2</item>
+        <item>@color/homepage_color_fg_3</item>
+        <item>@color/homepage_color_fg_4</item>
+        <item>@color/homepage_color_fg_5</item>
+        <item>@color/homepage_color_fg_6</item>
+        <item>@color/homepage_color_fg_7</item>
+    </integer-array>
 </resources>
