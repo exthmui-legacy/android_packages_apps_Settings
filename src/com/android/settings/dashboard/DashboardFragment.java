@@ -81,6 +81,8 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
     private boolean mListeningToCategoryChange;
     private List<String> mSuppressInjectedTileKeys;
 
+    private boolean mIsInHomePage;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -88,6 +90,7 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                 R.array.config_suppress_injected_tile_keys));
         mDashboardFeatureProvider = FeatureFactory.getFactory(context).
                 getDashboardFeatureProvider(context);
+        mDashboardFeatureProvider.setInHomePage(mIsInHomePage);
         // Load preference controllers from code
         final List<AbstractPreferenceController> controllersFromCode =
                 createPreferenceControllers(context);
@@ -180,6 +183,10 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
                     // Give all controllers a chance to handle click.
                     preference.getExtras().putInt(CATEGORY, getMetricsCategory());
                 });
+    }
+
+    public void setInHomePage(boolean val) {
+        mIsInHomePage = val;
     }
 
     @Override

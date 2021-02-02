@@ -91,6 +91,8 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
     private final CategoryManager mCategoryManager;
     private final PackageManager mPackageManager;
 
+    private boolean mIsInHomePage = false;
+
     public DashboardFeatureProviderImpl(Context context) {
         mContext = context.getApplicationContext();
         mCategoryManager = CategoryManager.get(context);
@@ -369,7 +371,7 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
                     && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);
                 ((AdaptiveIcon) iconDrawable).setBackgroundColor(mContext, tile);
-            } else {
+            } else if (isInHomePage()) {
                 setIconColor(iconDrawable, preference, tile);
             }
             preference.setIcon(iconDrawable);
@@ -398,6 +400,14 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
                 );
             });
         }
+    }
+
+    public boolean isInHomePage() {
+        return mIsInHomePage;
+    }
+
+    public void setInHomePage(boolean val) {
+        mIsInHomePage = val;
     }
 
     private void setIconColor(Drawable icon, Preference preference, Tile tile) {
