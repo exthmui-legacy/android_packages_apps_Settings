@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/device_status">
+
+    <!-- IMEI -->
+    <Preference
+        android:key="imei_info"
+        android:order="32"
+        android:title="@string/status_imei"
+        settings:keywords="@string/keywords_imei_info"
+        android:summary="@string/summary_placeholder"
+        settings:controller="com.android.settings.deviceinfo.imei.ImeiInfoPreferenceController"/>
+
+    <!--IP address -->
+    <Preference
+        android:key="wifi_ip_address"
+        android:order="44"
+        android:title="@string/wifi_ip_address"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"/>
+
+    <!-- Wi-Fi MAC address -->
+    <Preference
+        android:key="wifi_mac_address"
+        android:order="45"
+        android:title="@string/status_wifi_mac_address"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"/>
+
+    <!-- Bluetooth address -->
+    <Preference
+        android:key="bt_address"
+        android:order="46"
+        android:title="@string/status_bt_address"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"/>
+
+    <!-- Device up time -->
+    <Preference
+        android:key="up_time"
+        android:order="47"
+        android:title="@string/status_up_time"
+        android:summary="@string/summary_placeholder"/>
+
+    <!-- SerialNumber -->
+    <Preference
+        android:key="hardware_info_device_serial"
+        android:title="@string/status_serial_number"
+        android:summary="@string/summary_placeholder"
+        android:order="48"
+        settings:controller="com.android.settings.deviceinfo.hardwareinfo.SerialNumberPreferenceController"
+        settings:enableCopying="true"/>
+
+    <!-- Device FCC equipment id -->
+    <Preference
+        android:key="fcc_equipment_id"
+        android:order="52"
+        android:title="@string/fcc_equipment_id"
+        android:summary="@string/summary_placeholder"/>
+</PreferenceScreen>

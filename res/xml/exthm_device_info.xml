@@ -120,8 +120,9 @@
     </Preference>
 
     <Preference
-        android:title="@string/device_status"
-        android:key="status_info"/>
+        android:fragment="com.android.settings.deviceinfo.firmwareversion.exTHmDeviceInfoStatusFragment"
+        android:key="status_info"
+        android:title="@string/device_status" />
 
     <Preference
         android:key="build_number"
