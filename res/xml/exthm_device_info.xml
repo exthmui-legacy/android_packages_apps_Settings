@@ -140,8 +140,8 @@
     <!-- About exTHmUI -->
     <Preference
         android:key="about_exthmui"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutExthmPreferenceController"
-        android:title="关于 exTHmUI">
+        android:title="@string/about_exthmui"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutExthmPreferenceController">
         <intent
             android:targetClass="org.exthmui.aboutus.AboutActivity"
             android:targetPackage="org.exthmui.aboutus" />
