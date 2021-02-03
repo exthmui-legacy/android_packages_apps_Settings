@@ -194,7 +194,7 @@
 
     <!--关于手机-->
     <Preference
-        android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
+        android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
         android:icon="@drawable/ic_homepage_about"
         android:key="top_level_about_device"
         android:title="@string/about_settings"
