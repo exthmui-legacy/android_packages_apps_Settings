@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="security_dashboard_page"
     android:title="@string/device_and_security_settings"
-    settings:initialExpandedChildrenCount="9">
+    settings:initialExpandedChildrenCount="15">
 
     <!-- security_settings_status.xml -->
     <PreferenceCategory
@@ -152,5 +152,10 @@
         android:title="@string/screen_pinning_title"
         android:summary="@string/summary_placeholder"
         android:fragment="com.android.settings.security.ScreenPinningSettings" />
+
+    <com.android.settings.widget.exTHmRecommendedPreference
+        android:key="security_recommended_key"
+        android:entries="@array/recommended_security_entries"
+        android:entryValues="@array/recommended_security_values" />
 
 </PreferenceScreen>

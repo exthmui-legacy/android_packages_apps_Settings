@@ -28,8 +28,17 @@
 
     <string-array name="recommended_display_entries">
         <item>@string/device_and_security_settings</item>
+        <item>@string/theme_title</item>
     </string-array>
     <string-array name="recommended_display_values">
         <item>com.android.settings.Settings$SecurityDashboardActivity</item>
+        <item>org.exthmui.theme|org.exthmui.theme.ThemePickerActivity</item>
+    </string-array>
+
+    <string-array name="recommended_security_entries">
+        <item>@string/lockscreen_settings_title</item>
+    </string-array>
+    <string-array name="recommended_security_values">
+        <item>com.android.settings|com.android.settings.SubSettings|com.android.settings.security.LockscreenDashboardFragment</item>
     </string-array>
 </resources>
