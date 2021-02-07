@@ -161,4 +161,6 @@
     <color name="homepage_color_fg_5">#9c166b</color>
     <color name="homepage_color_fg_6">#681da8</color>
     <color name="homepage_color_fg_7">#007b83</color>
+
+    <color name="battery_meter_text_color">#ffd9d9d9</color>
 </resources>
