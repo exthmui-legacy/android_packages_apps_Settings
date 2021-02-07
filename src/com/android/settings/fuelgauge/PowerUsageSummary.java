@@ -145,7 +145,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
                 @Override
                 public void onLoadFinished(Loader<List<BatteryInfo>> loader,
-                        List<BatteryInfo> batteryInfos) {
+                                           List<BatteryInfo> batteryInfos) {
                     updateViews(batteryInfos);
                 }
 
@@ -157,12 +157,10 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
     protected void updateViews(List<BatteryInfo> batteryInfos) {
         final BatteryMeterView batteryView = mBatteryLayoutPref
                 .findViewById(R.id.battery_header_icon);
-        final TextView percentRemaining =
-                mBatteryLayoutPref.findViewById(R.id.battery_percent);
         final TextView summary1 = mBatteryLayoutPref.findViewById(R.id.summary1);
         BatteryInfo oldInfo = batteryInfos.get(0);
         BatteryInfo newInfo = batteryInfos.get(1);
-        percentRemaining.setText(Utils.formatPercentage(oldInfo.batteryLevel));
+        batteryView.setText(Utils.formatPercentage(oldInfo.batteryLevel));
 
         // set the text to the old estimate (copied from battery info). Note that this
         // can sometimes say 0 time remaining because battery stats requires the phone
@@ -189,7 +187,7 @@ public class PowerUsageSummary extends PowerUsageBase implements OnLongClickList
 
                 @Override
                 public void onLoadFinished(Loader<List<BatteryTip>> loader,
-                        List<BatteryTip> data) {
+                                           List<BatteryTip> data) {
                     mBatteryTipPreferenceController.updateBatteryTips(data);
                 }
 
