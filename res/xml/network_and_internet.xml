@@ -107,6 +107,7 @@
         settings:searchable="false"/>
 
     <com.android.settings.widget.exTHmRecommendedPreference
+        android:order="600"
         android:key="network_recommended_key"
         android:entries="@array/recommended_network_entries"
         android:entryValues="@array/recommended_network_values" />
