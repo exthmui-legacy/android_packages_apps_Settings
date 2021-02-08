@@ -33,9 +33,9 @@
 
     <!--移动数据-->
 
-    <com.android.settingslib.RestrictedPreference
+    <com.android.settings.widget.AddPreference
         android:icon="@drawable/ic_homepage_mobile_network"
-        android:key="mobile_network_settings"
+        android:key="mobile_network_list"
         android:title="@string/network_settings_title"
         settings:keywords="@string/keywords_more_mobile_networks"
         android:order="-130"

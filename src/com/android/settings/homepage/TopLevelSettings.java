@@ -64,7 +64,11 @@ public class TopLevelSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.top_level_settings;
+        if (FeatureFlagPersistent.isEnabled(getContext(), FeatureFlags.NETWORK_INTERNET_V2)) {
+            return R.xml.top_level_settings_v2;
+        } else {
+            return R.xml.top_level_settings;
+        }
     }
 
     @Override
@@ -154,7 +158,12 @@ public class TopLevelSettings extends DashboardFragment implements
                 public List<SearchIndexableResource> getXmlResourcesToIndex(
                         Context context, boolean enabled) {
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.top_level_settings;
+                    if (FeatureFlagPersistent.isEnabled(context,
+                            FeatureFlags.NETWORK_INTERNET_V2)) {
+                        sir.xmlResId = R.xml.top_level_settings_v2;
+                    } else {
+                        sir.xmlResId = R.xml.top_level_settings;
+                    }
                     return Arrays.asList(sir);
                 }
 
