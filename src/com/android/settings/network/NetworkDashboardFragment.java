@@ -97,10 +97,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
             MobilePlanPreferenceHost mobilePlanHost) {
         final MobilePlanPreferenceController mobilePlanPreferenceController =
                 new MobilePlanPreferenceController(context, mobilePlanHost);
-        MobileNetworkPreferenceController mobileNetworkPreferenceController = null;
-        if (!FeatureFlagPersistent.isEnabled(context, FeatureFlags.NETWORK_INTERNET_V2)) {
-            mobileNetworkPreferenceController = new MobileNetworkPreferenceController(context);
-        }
 
         final VpnPreferenceController vpnPreferenceController =
                 new VpnPreferenceController(context);
@@ -109,9 +105,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
 
         if (lifecycle != null) {
             lifecycle.addObserver(mobilePlanPreferenceController);
-            if (mobileNetworkPreferenceController != null) {
-                lifecycle.addObserver(mobileNetworkPreferenceController);
-            }
             lifecycle.addObserver(vpnPreferenceController);
             lifecycle.addObserver(privateDnsPreferenceController);
         }
@@ -120,9 +113,6 @@ public class NetworkDashboardFragment extends DashboardFragment implements
 
         if (FeatureFlagPersistent.isEnabled(context, FeatureFlags.NETWORK_INTERNET_V2)) {
             controllers.add(new MobileNetworkSummaryController(context, lifecycle));
-        }
-        if (mobileNetworkPreferenceController != null) {
-            controllers.add(mobileNetworkPreferenceController);
         }
         controllers.add(new TetherPreferenceController(context, lifecycle));
         controllers.add(vpnPreferenceController);
