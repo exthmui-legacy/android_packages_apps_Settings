@@ -22,6 +22,8 @@
     <string name="show_app_volume_title">Show app volume</string>
     <string name="show_app_volume_summary">Show app volume in volume panel.</string>
 
+    <string name="screenshot_sound_title">Screenshot sound</string>
+
     <!-- App lock -->
     <string name="applock_title">App locker</string>
     <string name="applock_locked">Locked</string>
