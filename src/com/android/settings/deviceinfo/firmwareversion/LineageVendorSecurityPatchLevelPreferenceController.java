@@ -36,7 +36,7 @@ public class LineageVendorSecurityPatchLevelPreferenceController extends BasePre
             "ro.vendor.build.security_patch";
 
     private static final String KEY_LINEAGE_VENDOR_SECURITY_PATCH =
-            "ro.lineage.build.vendor_security_patch";
+            "ro.exthm.build.vendor_security_patch";
 
     public LineageVendorSecurityPatchLevelPreferenceController(Context context, String key) {
         super(context, key);
