@@ -187,6 +187,12 @@
           android:key="screen_locking_sounds"
           android:title="@string/screen_locking_sounds_title"/>
 
+        <!-- Screenshot sound -->
+        <org.exthmui.settings.preferences.SystemSettingSwitchPreference
+            android:key="screenshot_sound"
+            android:title="@string/screenshot_sound_title"
+            android:defaultValue="true" />
+
         <!-- Charging sounds -->
         <SwitchPreference
           android:key="charging_sounds"
