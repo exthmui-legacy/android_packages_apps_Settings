@@ -22,7 +22,6 @@ import android.provider.SearchIndexableResource;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.nfc.AndroidBeamPreferenceController;
 import com.android.settings.print.PrintSettingPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
@@ -100,9 +99,6 @@ public class AdvancedConnectedDeviceDashboardFragment extends DashboardFragment 
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
                     PackageManager pm = context.getPackageManager();
-                    if (!pm.hasSystemFeature(PackageManager.FEATURE_NFC)) {
-                        keys.add(AndroidBeamPreferenceController.KEY_ANDROID_BEAM_SETTINGS);
-                    }
 
                     return keys;
                 }
