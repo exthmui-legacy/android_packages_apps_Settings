@@ -51,29 +51,23 @@ public class TopLevelNetworkEntryPreferenceController extends BasePreferenceCont
 
     @Override
     public CharSequence getSummary() {
-        final String wifiSummary = BidiFormatter.getInstance()
-                .unicodeWrap(mContext.getString(R.string.wifi_settings_title));
-        final String mobileSummary = mContext.getString(
-                R.string.network_dashboard_summary_mobile);
         final String dataUsageSummary = mContext.getString(
                 R.string.network_dashboard_summary_data_usage);
         final String hotspotSummary = mContext.getString(
                 R.string.network_dashboard_summary_hotspot);
+        final String airplaneModeSummary = mContext.getString(
+                R.string.airplane_mode);
 
         final List<String> summaries = new ArrayList<>();
-        if (mWifiPreferenceController.isAvailable()
-                && !TextUtils.isEmpty(wifiSummary)) {
-            summaries.add(wifiSummary);
-        }
-        if (mMobileNetworkPreferenceController.isAvailable() && !TextUtils.isEmpty(mobileSummary)) {
-            summaries.add(mobileSummary);
-        }
         if (!TextUtils.isEmpty(dataUsageSummary)) {
             summaries.add(dataUsageSummary);
         }
         if (mTetherPreferenceController.isAvailable()
                 && !TextUtils.isEmpty(hotspotSummary)) {
             summaries.add(hotspotSummary);
+        }
+        if (!TextUtils.isEmpty(airplaneModeSummary)) {
+            summaries.add(airplaneModeSummary);
         }
         return ListFormatter.getInstance().format(summaries);
     }

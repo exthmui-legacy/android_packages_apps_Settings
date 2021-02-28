@@ -5,4 +5,6 @@
     <string name="show_app_volume_summary">Show app volume in volume panel.</string>
 
     <string name="recommended_settings">You might be looking for:</string>
+
+    <string name="more_connections_title">More connections</string>
 </resources>

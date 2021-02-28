@@ -78,4 +78,6 @@
     <string name="show_app_volume_summary">在音量控制面板中显示应用程序的音量</string>
 
     <string name="recommended_settings">你可能想找：</string>
+
+    <string name="more_connections_title">更多连接</string>
 </resources>
