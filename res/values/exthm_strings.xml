@@ -3,4 +3,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="show_app_volume_title">Show app volume</string>
     <string name="show_app_volume_summary">Show app volume in volume panel.</string>
+
+    <string name="recommended_settings">You might be looking for:</string>
 </resources>

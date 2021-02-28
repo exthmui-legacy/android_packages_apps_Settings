@@ -76,4 +76,6 @@
 
     <string name="show_app_volume_title">分应用音量控制</string>
     <string name="show_app_volume_summary">在音量控制面板中显示应用程序的音量</string>
+
+    <string name="recommended_settings">你可能想找：</string>
 </resources>
