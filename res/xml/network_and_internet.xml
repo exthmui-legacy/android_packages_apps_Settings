@@ -46,6 +46,14 @@
         settings:userRestriction="no_config_mobile_networks"
         settings:useAdminDisabledSummary="true" />
 
+    <Preference
+        android:key="connected_devices"
+        android:title="@string/connected_devices_dashboard_title"
+        android:icon="@drawable/ic_connected_device"
+        android:order="4"
+        android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
+        settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
+
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.TetherSettings"
         android:key="tether_settings"

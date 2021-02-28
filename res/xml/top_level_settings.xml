@@ -52,15 +52,6 @@
         settings:controller="com.android.settings.network.TopLevelNetworkEntryPreferenceController"/>
 
     <Preference
-        android:key="top_level_connected_devices"
-        android:title="@string/connected_devices_dashboard_title"
-        android:summary="@string/summary_placeholder"
-        android:icon="@drawable/ic_homepage_connected_device"
-        android:order="-110"
-        android:fragment="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"
-        settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
-
-    <Preference
         android:key="top_level_apps_and_notifs"
         android:title="@string/app_and_notification_dashboard_title"
         android:summary="@string/app_and_notification_dashboard_summary"
