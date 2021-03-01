@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.network.MobilePlanPreferenceController.MobilePlanPreferenceHost;
+import com.android.settings.print.PrintSettingPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
@@ -100,11 +101,14 @@ public class NetworkDashboardFragment extends DashboardFragment implements
                 new VpnPreferenceController(context);
         final PrivateDnsPreferenceController privateDnsPreferenceController =
                 new PrivateDnsPreferenceController(context);
+        final PrintSettingPreferenceController printerController =
+                new PrintSettingPreferenceController(context);
 
         if (lifecycle != null) {
             lifecycle.addObserver(mobilePlanPreferenceController);
             lifecycle.addObserver(vpnPreferenceController);
             lifecycle.addObserver(privateDnsPreferenceController);
+            lifecycle.addObserver(printerController);
         }
 
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
@@ -115,6 +119,7 @@ public class NetworkDashboardFragment extends DashboardFragment implements
         controllers.add(new ProxyPreferenceController(context));
         controllers.add(mobilePlanPreferenceController);
         controllers.add(privateDnsPreferenceController);
+        controllers.add(printerController);
         return controllers;
     }
 
