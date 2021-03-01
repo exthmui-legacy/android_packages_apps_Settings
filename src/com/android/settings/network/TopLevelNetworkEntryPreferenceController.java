@@ -55,8 +55,8 @@ public class TopLevelNetworkEntryPreferenceController extends BasePreferenceCont
                 R.string.network_dashboard_summary_data_usage);
         final String hotspotSummary = mContext.getString(
                 R.string.network_dashboard_summary_hotspot);
-        final String airplaneModeSummary = mContext.getString(
-                R.string.airplane_mode);
+        final String connectedDeviceSummary = mContext.getString(
+                R.string.connected_devices_dashboard_title);
 
         final List<String> summaries = new ArrayList<>();
         if (!TextUtils.isEmpty(dataUsageSummary)) {
@@ -66,8 +66,8 @@ public class TopLevelNetworkEntryPreferenceController extends BasePreferenceCont
                 && !TextUtils.isEmpty(hotspotSummary)) {
             summaries.add(hotspotSummary);
         }
-        if (!TextUtils.isEmpty(airplaneModeSummary)) {
-            summaries.add(airplaneModeSummary);
+        if (!TextUtils.isEmpty(connectedDeviceSummary)) {
+            summaries.add(connectedDeviceSummary);
         }
         return ListFormatter.getInstance().format(summaries);
     }
