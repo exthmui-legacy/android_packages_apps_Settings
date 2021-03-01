@@ -21,14 +21,6 @@
     android:title="@string/more_connections_title"
     settings:initialExpandedChildrenCount="5">
 
-    <PreferenceCategory
-        android:key="multi_network_header"
-        android:title="@string/summary_placeholder"
-        android:layout="@layout/preference_category_no_label"
-        settings:allowDividerBelow="true"
-        android:order="-40"
-        settings:controller="com.android.settings.network.MultiNetworkHeaderController"/>
-
     <com.android.settingslib.RestrictedSwitchPreference
         android:key="airplane_mode"
         android:title="@string/airplane_mode"
