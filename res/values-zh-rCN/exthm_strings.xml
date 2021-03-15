@@ -113,4 +113,7 @@
         <item quantity="other">%d 个应用程序已锁定</item>
     </plurals>
     <string name="keywords_applock_settings">应用锁</string>
+    <!-- Refresh rate -->
+    <string name="min_refresh_rate_title">最小刷新率</string>
+    <string name="max_refresh_rate_title">最大刷新率</string>
 </resources>
