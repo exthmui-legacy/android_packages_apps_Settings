@@ -41,9 +41,11 @@ import androidx.lifecycle.OnLifecycleEvent;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settings.R;
 import com.android.settings.Utils;
+import com.android.settings.media.MediaOutputUtils;
 import com.android.settingslib.media.InfoMediaDevice;
 import com.android.settingslib.media.LocalMediaManager;
 import com.android.settingslib.media.MediaDevice;
+import com.android.settingslib.media.MediaOutputSliceConstants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +74,22 @@ public class MediaOutputPanel implements PanelContent, LocalMediaManager.DeviceC
     private MediaController mMediaController;
 
     public static MediaOutputPanel create(Context context, String packageName) {
-        return new MediaOutputPanel(context, packageName);
+        // Try to get the package name of the active media controller if packageName is null
+        if (packageName == null) {
+            final MediaController mediaController = MediaOutputUtils.getActiveLocalMediaController(
+                    context.getSystemService(MediaSessionManager.class));
+            packageName = (mediaController != null
+                                  && !TextUtils.isEmpty(mediaController.getPackageName()))
+                    ? mediaController.getPackageName()
+                    : "";
+        }
+        // Redirect to new media output dialog
+        context.sendBroadcast(new Intent()
+                .addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
+                .setPackage(MediaOutputSliceConstants.SYSTEMUI_PACKAGE_NAME)
+                .setAction(MediaOutputSliceConstants.ACTION_LAUNCH_MEDIA_OUTPUT_DIALOG)
+                .putExtra(MediaOutputSliceConstants.EXTRA_PACKAGE_NAME, packageName));
+        return null;
     }
 
     private MediaOutputPanel(Context context, String packageName) {
