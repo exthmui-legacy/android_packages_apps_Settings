@@ -24,5 +24,6 @@
 
     <style name="CustomPreference" parent="Preference.Material">
         <item name="allowDividerAbove">false</item>
+        <item name="allowDividerBelow">false</item>
     </style>
 </resources>
