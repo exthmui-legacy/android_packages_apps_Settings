@@ -23,6 +23,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.core.FeatureFlags;
@@ -33,11 +34,14 @@ import com.android.settings.network.MobileNetworkPreferenceController;
 import com.android.settings.network.MobileNetworkSummaryController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.support.SupportPreferenceController;
+import com.android.settings.widget.MasterSwitchPreference;
 import com.android.settings.wifi.WifiMasterSwitchPreferenceController;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.instrumentation.Instrumentable;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settingslib.drawer.ProviderTile;
+import com.android.settingslib.drawer.Tile;
 import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
@@ -46,6 +50,9 @@ import java.util.List;
 
 import static com.android.settings.search.actionbar.SearchMenuController.NEED_SEARCH_ICON_IN_ACTION_BAR;
 import static com.android.settingslib.search.SearchIndexable.MOBILE;
+
+import org.exthmui.settings.widget.HomepagePreference;
+import org.exthmui.settings.widget.exTHmMasterSwitchPreference;
 
 @SearchIndexable(forTarget = MOBILE)
 public class TopLevelSettings extends DashboardFragment implements
@@ -126,6 +133,15 @@ public class TopLevelSettings extends DashboardFragment implements
                 .setTitleRes(-1)
                 .launch();
         return true;
+    }
+
+    @Override
+    public Preference createPreference(Tile tile) {
+        return tile instanceof ProviderTile
+                ? new SwitchPreference(getPrefContext())
+                : tile.hasSwitch()
+                ? new exTHmMasterSwitchPreference(getPrefContext())
+                : new HomepagePreference(getPrefContext());
     }
 
     @Override
