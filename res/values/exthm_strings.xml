@@ -17,9 +17,12 @@
     <string name="show_app_volume_title">Show app volume</string>
     <string name="show_app_volume_summary">Show app volume in volume panel.</string>
 
-    <string name="recommended_settings">You might be looking for:</string>
+    <string name="recommended_settings">You might be looking for: </string>
 
     <string name="more_connections_title">More connections</string>
+
+    <string name="more_settings">More settings</string>
+    <string name="about_exthmui">About exTHmUI</string>
 
     <!-- DC Dimming -->
     <string name="dc_dimming_title">DC Dimming</string>

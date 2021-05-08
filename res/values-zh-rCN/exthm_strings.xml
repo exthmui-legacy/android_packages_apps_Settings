@@ -80,4 +80,7 @@
     <string name="recommended_settings">你可能想找：</string>
 
     <string name="more_connections_title">更多连接</string>
+
+    <string name="more_settings">更多设置</string>
+    <string name="about_exthmui">关于 exTHmUI</string>
 </resources>
