@@ -547,7 +547,7 @@ public abstract class DashboardFragment extends SettingsPreferenceFragment
     }
 
     @VisibleForTesting
-    Preference createPreference(Tile tile) {
+    public Preference createPreference(Tile tile) {
         return tile instanceof ProviderTile
                 ? new SwitchPreference(getPrefContext())
                 : tile.hasSwitch()

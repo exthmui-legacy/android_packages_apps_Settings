@@ -74,9 +74,11 @@ public class AddPreference extends RestrictedPreference implements View.OnClickL
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
         mWidgetFrame = holder.findViewById(android.R.id.widget_frame);
-        mAddWidget = holder.findViewById(getAddWidgetResId());
-        mAddWidget.setEnabled(true);
-        mAddWidget.setOnClickListener(this);
+
+        if ((mAddWidget = holder.findViewById(getAddWidgetResId())) != null) {
+            mAddWidget.setEnabled(true);
+            mAddWidget.setOnClickListener(this);
+        }
     }
 
     @Override

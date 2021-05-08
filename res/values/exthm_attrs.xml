@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="showSummary" format="boolean" />
+
+    <declare-styleable name="exTHm_HomepagePreference">
+        <attr name="showSummary" />
+    </declare-styleable>
+
+    <declare-styleable name="exTHm_HomepagePreferenceCategory">
+        <attr name="isTheFirstCategory" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="exTHm_RestrictedPreference">
+        <attr name="showSummary" />
+        <attr name="isInHomepage" format="boolean" />
+    </declare-styleable>
+
+</resources>

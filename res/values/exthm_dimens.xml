@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="exthm_preference_min_height">52dp</dimen>
+    <dimen name="exthm_preference_arrow_widget_min_width">64dp</dimen>
+
+</resources>
