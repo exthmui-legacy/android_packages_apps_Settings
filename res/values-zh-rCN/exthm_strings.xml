@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2021 The exTHmUI Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Units -->
+    <string name="unit_seconds">秒</string>
+    <string name="unit_milliseconds">毫秒</string>
+    <string name="unit_pixels">dp</string>
+
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">通知提示</string>
+    <string name="ticker_screen_summary">在状态栏中显示通知样式</string>
+    <string name="ticker_screen_footer">仅当未开启通知提示时，浮动通知才可见。 具有中心刘海的设备应在用户界面设置或开发人员选项下隐藏刘海。</string>
+    <string name="ticker_title">状态栏图标</string>
+    <string name="ticker_summary">使用旧的时钟样式</string>
+    <string name="ticker_restore_defaults_title">恢复默认值</string>
+    <string name="text_title">文本</string>
+    <string name="icon_title">图标</string>
+    <string name="colors_title">颜色</string>
+    <string name="values_restored_title">已恢复的值</string>
+    <string name="ticker_disabled">已禁用通知提示</string>
+    <string name="ticker_enabled">已启用通知提示</string>
+    <string name="ticker_media_enabled">通知和音乐提示</string>
+    <string name="ticker_animation_mode_title">通知提示动画样式</string>
+    <string name="ticker_animation_mode_alpha_fade">淡入淡出</string>
+    <string name="ticker_animation_mode_scroll">滚动</string>
+    <string name="ticker_tick_duration_title">状态栏通知时长</string>
+
+     <!-- Status Bar Lyric -->
+    <string name="status_bar_show_lyric_title">状态栏歌词</string>
+    <string name="status_bar_show_lyric_summary">在状态栏中显示歌词 (需要应用程序支持)</string>
+</resources>
