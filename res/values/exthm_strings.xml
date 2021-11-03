@@ -46,4 +46,7 @@
     <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
     <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
+    <!-- Display tap to wake custom summary -->
+    <string name="tap_to_wake_summary_arrow">Double-tap anywhere on the screen to wake or sleep device</string>
+
 </resources>
