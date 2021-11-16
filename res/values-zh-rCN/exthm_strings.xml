@@ -12,6 +12,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- About Screen -->
+    <string name="exthm_version">exTHmUI 版本</string>
+    <string name="soc_model">处理器</string>
+    <string name="soc_model_qualcomm">高通</string>
+    <string name="soc_model_mediatek">联发科</string>
+
     <!-- Units -->
     <string name="unit_seconds">秒</string>
     <string name="unit_milliseconds">毫秒</string>
