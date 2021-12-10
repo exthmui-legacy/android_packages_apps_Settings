@@ -15,9 +15,12 @@
 
     <!-- About Screen -->
     <string name="exthm_version">exTHmUI Version</string>
+
+    <!-- Hardware info -->
     <string name="soc_model">SoC Model</string>
     <string name="soc_model_qualcomm">Qualcomm</string>
     <string name="soc_model_mediatek">Mediatek</string>
+    <string name="total_ram">Total RAM</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>

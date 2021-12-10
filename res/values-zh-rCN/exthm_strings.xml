@@ -15,9 +15,12 @@
 
     <!-- About Screen -->
     <string name="exthm_version">exTHmUI 版本</string>
+
+    <!-- Hardware Info -->
     <string name="soc_model">处理器</string>
     <string name="soc_model_qualcomm">高通</string>
     <string name="soc_model_mediatek">联发科</string>
+    <string name="total_ram">总内存</string>
 
     <!-- Units -->
     <string name="unit_seconds">秒</string>
