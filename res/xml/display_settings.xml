@@ -163,7 +163,7 @@
             android:fragment="com.android.settings.fragments.notifications.Ticker"/>
 
         <!-- Statusbar Lyric -->
-        <SecureSettingSwitchPreference
+        <com.android.settings.preferences.SecureSettingSwitchPreference
             android:key="status_bar_show_lyric"
             android:title="@string/status_bar_show_lyric_title"
             android:summary="@string/status_bar_show_lyric_summary"
