@@ -21,11 +21,17 @@ import android.app.settings.SettingsEnums;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.UserInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
@@ -37,6 +43,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
 
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settings.homepage.SettingsHomepageActivity;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.utils.ThreadUtils;
@@ -64,6 +71,7 @@ public class AvatarViewMixin implements LifecycleObserver {
     private final Context mContext;
     private final ImageView mAvatarView;
     private final MutableLiveData<Bitmap> mAvatarImage;
+    private final UserManager mUserManager;
 
     @VisibleForTesting
     String mAccountName;
@@ -81,6 +89,7 @@ public class AvatarViewMixin implements LifecycleObserver {
 
     public AvatarViewMixin(SettingsHomepageActivity activity, ImageView avatarView) {
         mContext = activity.getApplicationContext();
+        mUserManager = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
         mAvatarView = avatarView;
         mAvatarView.setOnClickListener(v -> {
             Intent intent;
@@ -125,9 +134,35 @@ public class AvatarViewMixin implements LifecycleObserver {
         if (hasAccount()) {
             loadAccount();
         } else {
-            mAccountName = null;
-            mAvatarView.setImageResource(R.drawable.ic_account_circle_24dp);
+            final UserInfo info = Utils.getExistingUser(mUserManager, android.os.Process.myUserHandle());
+            mAccountName = info.name;
+            Drawable drawable = com.android.settingslib.Utils.getUserIcon(mContext, mUserManager, info);
+            int size = dpToPx(mContext, 64);
+            mAvatarImage.postValue(drawableToBitmap(drawable, size));
         }
+    }
+
+    private static Bitmap drawableToBitmap(Drawable drawable, int size) {
+        int width = drawable.getIntrinsicWidth();
+        int height = drawable.getIntrinsicHeight();
+        Bitmap.Config config = drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
+                : Bitmap.Config.RGB_565;
+        Bitmap oldBitmap = Bitmap.createBitmap(width, height, config);
+        Canvas canvas = new Canvas(oldBitmap);
+        drawable.setBounds(0, 0, width, height);
+        drawable.draw(canvas);
+        Matrix matrix = new Matrix();
+        float scaleWidth = ((float) size / width);
+        float scaleHeight = ((float) size / height);
+        matrix.postScale(scaleWidth, scaleHeight);
+        Bitmap bitmap = Bitmap.createBitmap(oldBitmap, 0, 0, width, height,
+                matrix, true);
+        return bitmap;
+    }
+
+    private static int dpToPx(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 
     @VisibleForTesting
