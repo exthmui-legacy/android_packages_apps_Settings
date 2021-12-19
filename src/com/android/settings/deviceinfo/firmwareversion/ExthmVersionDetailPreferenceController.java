@@ -18,6 +18,8 @@ package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
 import android.os.SystemProperties;
@@ -35,9 +37,13 @@ import com.android.settings.core.BasePreferenceController;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 
+import java.util.Locale;
+
 public class ExthmVersionDetailPreferenceController extends BasePreferenceController {
 
     private static final String TAG = "ExthmVersionDialogCtrl";
+    private static final Uri INTENT_URI_DATA_CN = Uri.parse("https://www.bilibili.com/video/BV1zW411q7PT");
+    private static final Uri INTENT_URI_DATA_EN = Uri.parse("https://www.youtube.com/watch?v=qYYnQn4SfEo");
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
@@ -48,6 +54,8 @@ public class ExthmVersionDetailPreferenceController extends BasePreferenceContro
 
     private RestrictedLockUtils.EnforcedAdmin mFunDisallowedAdmin;
     private boolean mFunDisallowedBySystem;
+
+    private final PackageManager mPackageManager;
 
     public ExthmVersionDetailPreferenceController(Context context, String key) {
         super(context, key);
@@ -85,14 +93,21 @@ public class ExthmVersionDetailPreferenceController extends BasePreferenceContro
                 Log.d(TAG, "Nothing here, stop poking around!");
                 return true;
             }
-	    final Intent intent = new Intent(Intent.ACTION_MAIN)
-                    .setClassName(
-                            "android", com.android.internal.app.PlatLogoActivity.class.getName());
-            try {
-                mContext.startActivity(intent);
-            } catch (Exception e) {
-                Log.e(TAG, "Unable to start activity " + intent.toString());
-            }
+
+        final Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        if (isZhCN(false)){
+		    intent.setData(INTENT_URI_DATA_CN);
+	    } else{
+		    intent.setData(INTENT_URI_DATA_EN);
+	    }
+        if (mPackageManager.queryIntentActivities(intent, 0).isEmpty()) {
+            // Don't send out the intent to stop crash
+            Log.w(TAG, "queryIntentActivities() returns empty");
+            return true;
+        }
+
+        mContext.startActivity(intent);
         }
         return true;
     }
@@ -111,5 +126,18 @@ public class ExthmVersionDetailPreferenceController extends BasePreferenceContro
                 mContext, UserManager.DISALLOW_FUN, UserHandle.myUserId());
         mFunDisallowedBySystem = RestrictedLockUtilsInternal.hasBaseUserRestriction(
                 mContext, UserManager.DISALLOW_FUN, UserHandle.myUserId());
+    }
+
+    public static boolean isZhCN(boolean excludeSAR) {
+	    Locale locale = Locale.getDefault();
+	    if (locale.getLanguage().startsWith(Locale.CHINESE.getLanguage())) {
+		    if (excludeSAR) {
+			    return locale.getCountry().equals("CN");
+		    } else {
+			    return !locale.getCountry().equals("SG");
+		    }
+	    } else {
+		    return false;
+	    }
     }
 }
