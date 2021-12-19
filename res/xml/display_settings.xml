@@ -168,5 +168,11 @@
             android:title="@string/status_bar_show_lyric_title"
             android:summary="@string/status_bar_show_lyric_summary"
             android:defaultValue="true" />
+
+        <com.android.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_lunar_calendar"
+            android:title="@string/qs_show_lunar_calendar_title"
+	    android:summary="@string/qs_show_lunar_calendar_summary"
+	    android:defaultValue="false"/>
     </PreferenceCategory>
 </PreferenceScreen>
