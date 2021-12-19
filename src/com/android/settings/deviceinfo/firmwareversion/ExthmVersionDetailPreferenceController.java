@@ -59,6 +59,7 @@ public class ExthmVersionDetailPreferenceController extends BasePreferenceContro
 
     public ExthmVersionDetailPreferenceController(Context context, String key) {
         super(context, key);
+        mPackageManager = mContext.getPackageManager();
         mUserManager = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
         initializeAdminPermissions();
     }
