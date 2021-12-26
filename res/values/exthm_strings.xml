@@ -106,6 +106,10 @@
     <string name="gaming_mode_use_menu_overlay_summary">Show menu overlay when game is running. If this option is disabled, some game mode features will be disabled, such as Danmaku notifications</string>
 
      <!-- chinese lunar calendar -->
-    <string name="qs_show_lunar_calendar_title">农历日期</string>
-    <string name="qs_show_lunar_calendar_summary">在快速设置中显示农历日期</string>
+    <string name="qs_show_lunar_calendar_title">Chinese Lunar Calendar</string>
+    <string name="qs_show_lunar_calendar_summary">Show lunar calendar in QS</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
+    <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
 </resources>
