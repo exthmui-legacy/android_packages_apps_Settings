@@ -42,7 +42,7 @@ import java.util.List;
 public class PhoneNumberPreferenceController extends BasePreferenceController {
 
     private static final String KEY_PHONE_NUMBER = "phone_number";
-    private static final String KEY_PREFERENCE_CATEGORY = "basic_info_category";
+    private static final String KEY_PREFERENCE_CATEGORY = "mobile_detail_category";
 
     private final TelephonyManager mTelephonyManager;
     private final SubscriptionManager mSubscriptionManager;

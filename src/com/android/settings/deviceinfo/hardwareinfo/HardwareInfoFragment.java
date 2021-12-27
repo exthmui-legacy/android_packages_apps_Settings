@@ -21,8 +21,18 @@ import android.content.Context;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.deviceinfo.BluetoothAddressPreferenceController;
+import com.android.settings.deviceinfo.IpAddressPreferenceController;
+import com.android.settings.deviceinfo.WifiMacAddressPreferenceController;
+import com.android.settings.deviceinfo.imei.ImeiInfoPreferenceController;
+import com.android.settings.deviceinfo.simstatus.SimStatusPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SearchIndexable
 public class HardwareInfoFragment extends DashboardFragment {
@@ -35,13 +45,39 @@ public class HardwareInfoFragment extends DashboardFragment {
     }
 
     @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        use(ImeiInfoPreferenceController.class).setHost(this /* parent */);
+    }
+
+    @Override
     protected int getPreferenceScreenResId() {
         return R.xml.hardware_info;
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
     protected String getLogTag() {
         return TAG;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, this /* fragment */, getSettingsLifecycle());
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, HardwareInfoFragment fragment, Lifecycle lifecycle) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new SimStatusPreferenceController(context, fragment));
+        controllers.add(new IpAddressPreferenceController(context, lifecycle));
+        controllers.add(new WifiMacAddressPreferenceController(context, lifecycle));
+        controllers.add(new BluetoothAddressPreferenceController(context, lifecycle));
+        return controllers;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

@@ -125,4 +125,10 @@
     <string name="heads_up_snooze_25min">25 min</string>
     <string name="heads_up_snooze_30min">30 min</string>
     <string name="heads_up_snooze_1h">1 hour</string>
+
+    <!-- Device Info -->
+    <string name="device_info_title">Device Info</string>
+    <string name="device_info_mobile_title">Mobile Info</string>
+    <string name="device_info_hardware_title">Hardware Info</string>
+    <string name="device_info_network_title">Network Info</string>
 </resources>

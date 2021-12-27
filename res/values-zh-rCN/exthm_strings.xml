@@ -124,4 +124,10 @@
     <string name="heads_up_snooze_25min">25 分钟</string>
     <string name="heads_up_snooze_30min">30 分钟</string>
     <string name="heads_up_snooze_1h">1 小时</string>
+
+    <!-- Device Info -->
+    <string name="device_info_title">设备信息</string>
+    <string name="device_info_mobile_title">移动网络信息</string>
+    <string name="device_info_hardware_title">硬件信息</string>
+    <string name="device_info_network_title">网络信息</string>
 </resources>
