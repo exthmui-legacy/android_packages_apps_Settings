@@ -111,4 +111,17 @@
     <!-- Global Actions -->
     <string name="global_actions_advanced_reboot_title">启用高级重启</string>
     <string name="global_actions_advanced_reboot_summary">在电源菜单中显示恢复和引导加载程序选项</string>
+
+    <!-- Heads Up Snooze -->
+    <string name="heads_up_snooze_title">暂停浮动通知时长</string>
+    <string name="heads_up_snooze_dialog_title">选择一个时间</string>
+    <string name="heads_up_snooze_summary">在一个应用程序弹出的浮动通知上上滑将会暂停其浮动通知在设定时间内的弹出</string>
+    <string name="heads_up_snooze_1min">1 分钟</string>
+    <string name="heads_up_snooze_5min">5 分钟</string>
+    <string name="heads_up_snooze_10min">10 分钟</string>
+    <string name="heads_up_snooze_15min">15 分钟</string>
+    <string name="heads_up_snooze_20min">20 分钟</string>
+    <string name="heads_up_snooze_25min">25 分钟</string>
+    <string name="heads_up_snooze_30min">30 分钟</string>
+    <string name="heads_up_snooze_1h">1 小时</string>
 </resources>

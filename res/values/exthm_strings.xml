@@ -112,4 +112,17 @@
     <!-- Global Actions -->
     <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
+
+    <!-- Heads Up Snooze -->
+    <string name="heads_up_snooze_title">Snooze timer</string>
+    <string name="heads_up_snooze_dialog_title">Choose a time</string>
+    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for user set time.</string>
+    <string name="heads_up_snooze_1min">1 min</string>
+    <string name="heads_up_snooze_5min">5 min</string>
+    <string name="heads_up_snooze_10min">10 min</string>
+    <string name="heads_up_snooze_15min">15 min</string>
+    <string name="heads_up_snooze_20min">20 min</string>
+    <string name="heads_up_snooze_25min">25 min</string>
+    <string name="heads_up_snooze_30min">30 min</string>
+    <string name="heads_up_snooze_1h">1 hour</string>
 </resources>
