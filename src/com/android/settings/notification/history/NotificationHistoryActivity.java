@@ -17,7 +17,6 @@
 package com.android.settings.notification.history;
 
 import static android.provider.Settings.Secure.NOTIFICATION_HISTORY_ENABLED;
-
 import static androidx.core.view.accessibility.AccessibilityEventCompat.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
 
 import android.annotation.AttrRes;
@@ -59,10 +58,11 @@ import com.android.internal.logging.UiEventLoggerImpl;
 import com.android.internal.widget.NotificationExpandButton;
 import com.android.settings.R;
 import com.android.settings.notification.NotificationBackend;
-import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.utils.ThreadUtils;
 import com.android.settingslib.widget.MainSwitchBar;
 import com.android.settingslib.widget.OnMainSwitchChangeListener;
+
+import org.exthmui.settingslib.collapsingtoolbar.ExthmCollapsingToolbarBaseActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,7 +70,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-public class NotificationHistoryActivity extends CollapsingToolbarBaseActivity {
+public class NotificationHistoryActivity extends ExthmCollapsingToolbarBaseActivity {
 
     private static String TAG = "NotifHistory";
 

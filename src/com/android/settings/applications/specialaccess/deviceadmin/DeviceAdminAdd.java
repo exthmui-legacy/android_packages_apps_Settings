@@ -71,8 +71,8 @@ import com.android.settings.users.UserDialogs;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import com.android.settingslib.RestrictedLockUtilsInternal;
-import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
+import org.exthmui.settingslib.collapsingtoolbar.ExthmCollapsingToolbarBaseActivity;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
@@ -83,7 +83,7 @@ import java.util.Optional;
 /**
  * A confirmation screen for enabling administractor.
  */
-public class DeviceAdminAdd extends CollapsingToolbarBaseActivity {
+public class DeviceAdminAdd extends ExthmCollapsingToolbarBaseActivity {
     static final String TAG = "DeviceAdminAdd";
 
     static final int DIALOG_WARNING = 1;
