@@ -43,8 +43,9 @@ public class GestureSettings extends DashboardFragment {
     }
 
     @Override
+    // exTHmUI changes, change for exTHm gestures & keys
     protected int getPreferenceScreenResId() {
-        return R.xml.gestures;
+        return R.xml.exthm_settings_gestures_keys;
     }
 
     @Override
@@ -62,6 +63,7 @@ public class GestureSettings extends DashboardFragment {
         return mAmbientDisplayConfig;
     }
 
+    // exTHmUI changes, change for exTHm gestures & keys
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.gestures);
+            new BaseSearchIndexProvider(R.xml.exthm_settings_gestures_keys);
 }

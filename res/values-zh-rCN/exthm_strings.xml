@@ -130,4 +130,9 @@
     <string name="device_info_mobile_title">移动网络信息</string>
     <string name="device_info_hardware_title">硬件信息</string>
     <string name="device_info_network_title">网络信息</string>
+
+    <!-- Gestures & Keys -->
+    <string name="exthm_settings_gestures_keys_title">手势与按键</string>
+    <string name="exthm_settings_gestures_category_title">手势</string>
+    <string name="exthm_settings_keys_category_title">按键</string>
 </resources>

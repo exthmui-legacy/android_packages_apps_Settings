@@ -131,4 +131,9 @@
     <string name="device_info_mobile_title">Mobile Info</string>
     <string name="device_info_hardware_title">Hardware Info</string>
     <string name="device_info_network_title">Network Info</string>
+
+    <!-- Gestures & Keys -->
+    <string name="exthm_settings_gestures_keys_title">Gestures &amp; Keys</string>
+    <string name="exthm_settings_gestures_category_title">Gestures</string>
+    <string name="exthm_settings_keys_category_title">Keys</string>
 </resources>
