@@ -158,11 +158,11 @@
         android:summary="@string/system_dashboard_summary"/>
 
     <Preference
-        android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
+        android:fragment="org.exthmui.settings.deviceinfo.mydevice.ExthmMyDeviceFragment"
         android:icon="@drawable/ic_phone_info"
         android:key="top_level_about_device"
         android:order="20"
-        android:title="@string/about_settings"
+        android:title="@string/exthm_settings_my_device_title"
         android:summary="@string/summary_placeholder"
         settings:controller="com.android.settings.deviceinfo.aboutphone.TopLevelAboutDevicePreferenceController"/>
 

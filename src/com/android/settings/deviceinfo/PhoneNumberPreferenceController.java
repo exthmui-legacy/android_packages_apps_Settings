@@ -79,7 +79,7 @@ public class PhoneNumberPreferenceController extends BasePreferenceController {
             multiSimPreference.setOrder(phonePreferenceOrder + simSlotNumber);
             multiSimPreference.setKey(KEY_PHONE_NUMBER + simSlotNumber);
             multiSimPreference.setSelectable(false);
-            category.addPreference(multiSimPreference);
+            screen.addPreference(multiSimPreference);
             mPreferenceList.add(multiSimPreference);
         }
     }

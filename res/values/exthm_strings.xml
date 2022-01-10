@@ -13,8 +13,14 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- About Screen -->
-    <string name="exthm_version">exTHmUI Version</string>
+    <!-- My Device -->
+    <string name="exthm_settings_my_device_title">My device</string>
+    <string name="exthm_settings_my_device_exthmui_version_title">exTHmUI version</string>
+    <string name="exthm_settings_my_device_display_version_title">Version</string>
+    <string name="exthm_settings_my_device_processor_title">Processor</string>
+    <string name="exthm_settings_my_device_ram_title">RAM</string>
+    <string name="exthm_settings_my_device_storage_title">Storage</string>
+    <string name="exthm_settings_my_device_storage_regex">%1$s used / %2$s</string>
 
     <!-- Hardware info -->
     <string name="soc_model">SoC Model</string>

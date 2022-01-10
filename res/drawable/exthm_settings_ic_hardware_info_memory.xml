@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="@color/exthm_settings_hardware_info_icon_color"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M21.5,4v16h-6.3v-3.1l-6.5,0V20H2.5V4H21.5zM4.5,6v12h2.2v-3.1l10.5,0V18h2.3V6H4.5z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M5.7,8.5h2v4h-2z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M9.2,8.5h2v4h-2z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M12.7,8.5h2v4h-2z" />
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M16.2,8.5h2v4h-2z" />
+</vector>

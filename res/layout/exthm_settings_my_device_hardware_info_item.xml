@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="4dp">
+
+    <ImageView
+        android:id="@+id/hardware_info_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:minWidth="36dp"
+        android:minHeight="36dp" />
+
+    <TextView
+        android:id="@+id/hardware_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/exthm_settings_hardware_info_title_text_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/hardware_info_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/exthm_settings_hardware_info_content_text_color"
+        android:textSize="13sp" />
+
+</LinearLayout>

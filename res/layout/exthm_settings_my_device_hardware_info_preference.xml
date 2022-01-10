@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:clipChildren="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hardware_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:clipChildren="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:forceDarkAllowed="false"
+        android:paddingStart="24dp"
+        android:paddingEnd="16dp"
+        android:paddingVertical="12dp" />
+
+</FrameLayout>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2022 The exTHmUI Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.android.settings.deviceinfo.firmwareversion;
+package org.exthmui.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -41,13 +40,13 @@ import java.util.Locale;
 
 public class ExthmVersionDetailPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "ExthmVersionDialogCtrl";
+    private static final String TAG = "ExthmVersionDetailPrefCtrl";
     private static final Uri INTENT_URI_DATA_CN = Uri.parse("https://www.bilibili.com/video/BV1zW411q7PT");
     private static final Uri INTENT_URI_DATA_EN = Uri.parse("https://www.youtube.com/watch?v=qYYnQn4SfEo");
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_EXTHM_VERSION_PROP = "ro.exthm.version";
+    private static final String KEY_EXTHM_VERSION_PROP = "ro.exthmui.build.version";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];

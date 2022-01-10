@@ -38,7 +38,7 @@
     <!-- exTHmUI Version -->
     <Preference
         android:key="exthm_version"
-        android:title="@string/exthm_version"
+        android:title="@string/exthm_settings_my_device_exthmui_version_title"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:searchable="false"

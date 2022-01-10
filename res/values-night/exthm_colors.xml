@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Hardware Info -->
+    <color name="exthm_settings_hardware_info_title_text_color">#FFFFFFFF</color>
+    <color name="exthm_settings_hardware_info_content_text_color">#B3FFFFFF</color>
+
+</resources>

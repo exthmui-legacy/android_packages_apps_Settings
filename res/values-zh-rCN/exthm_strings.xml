@@ -13,8 +13,14 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- About Screen -->
-    <string name="exthm_version">exTHmUI 版本</string>
+    <!-- My Device -->
+    <string name="exthm_settings_my_device_title">我的设备</string>
+    <string name="exthm_settings_my_device_exthmui_version_title">exTHmUI 版本</string>
+    <string name="exthm_settings_my_device_display_version_title">版本号</string>
+    <string name="exthm_settings_my_device_processor_title">处理器</string>
+    <string name="exthm_settings_my_device_ram_title">运行内存</string>
+    <string name="exthm_settings_my_device_storage_title">存储空间</string>
+    <string name="exthm_settings_my_device_storage_regex">已用 %1$s / %2$s</string>
 
     <!-- Hardware Info -->
     <string name="soc_model">处理器</string>
