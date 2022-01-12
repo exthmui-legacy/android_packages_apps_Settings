@@ -52,6 +52,7 @@ android_library {
         "androidx.slice_slice-core",
         "androidx.slice_slice-view",
         "androidx.core_core",
+        "exthmuix.core_core",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.preference_preference",
