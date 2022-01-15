@@ -28,7 +28,7 @@
     <!-- Hardware info -->
     <org.exthmui.settings.preference.ExthmHardwareInfoPreference
         android:key="exthm_hardware_info"
-        settings:controller="org.exthmui.settings.deviceinfo.hardwareinfo.ExthmHardwareInfoPreferenceController"/>
+        settings:controller="org.exthmui.settings.deviceinfo.hardwareinfo.ExthmHardwareInfoPreferenceController" />
 
     <!-- Device name -->
     <com.android.settings.widget.ValidatedEditTextPreference
@@ -84,14 +84,6 @@
         android:summary="@string/summary_placeholder"
         android:title="@string/kernel_version"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"
-        settings:enableCopying="true" />
-
-    <!-- Build number -->
-    <Preference
-        android:key="build_number"
-        android:summary="@string/summary_placeholder"
-        android:title="@string/build_number"
-        settings:controller="com.android.settings.deviceinfo.BuildNumberPreferenceController"
         settings:enableCopying="true" />
 
     <!-- Legal information -->

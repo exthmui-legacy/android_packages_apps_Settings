@@ -14,6 +14,7 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import org.exthmui.settings.deviceinfo.firmwareversion.ExthmDisplayVersionPreferenceController;
 import org.exthmui.settings.deviceinfo.hardwareinfo.ExthmHardwareInfoPreferenceController;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class ExthmMyDeviceFragment extends DashboardFragment
 
     private static final String LOG_TAG = "ExthmMyDeviceFragment";
 
-    private BuildNumberPreferenceController mBuildNumberPreferenceController;
+    private ExthmDisplayVersionPreferenceController mExthmDisplayVersionPreferenceController;
 
     @Override
     public int getMetricsCategory() {
@@ -41,8 +42,8 @@ public class ExthmMyDeviceFragment extends DashboardFragment
     public void onAttach(Context context) {
         super.onAttach(context);
         use(DeviceNamePreferenceController.class).setHost(this /* parent */);
-        mBuildNumberPreferenceController = use(BuildNumberPreferenceController.class);
-        mBuildNumberPreferenceController.setHost(this /* parent */);
+        mExthmDisplayVersionPreferenceController = use(ExthmDisplayVersionPreferenceController.class);
+        mExthmDisplayVersionPreferenceController.setHost(this);
     }
 
     @Override
@@ -68,7 +69,7 @@ public class ExthmMyDeviceFragment extends DashboardFragment
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (mBuildNumberPreferenceController.onActivityResult(requestCode, resultCode, data)) {
+        if (mExthmDisplayVersionPreferenceController.onActivityResult(requestCode, resultCode, data)) {
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
