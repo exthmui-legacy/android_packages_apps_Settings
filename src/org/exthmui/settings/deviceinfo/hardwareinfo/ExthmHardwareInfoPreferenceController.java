@@ -70,7 +70,7 @@ public class ExthmHardwareInfoPreferenceController extends BasePreferenceControl
                 break;
             default:
                 if (socModel.startsWith("MT")) {
-                    socManufacture = mContext.getString(R.string.soc_model_qualcomm);
+                    socManufacture = mContext.getString(R.string.soc_model_mediatek);
                 } else {
                     socManufacture = ExthmDeviceUtils.getSocManufacture();
                 }
