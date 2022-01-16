@@ -25,7 +25,7 @@
     <!-- Hardware info -->
     <string name="soc_model">SoC Model</string>
     <string name="soc_model_qualcomm">Qualcomm</string>
-    <string name="soc_model_mediatek">Mediatek</string>
+    <string name="soc_model_mediatek">MTK</string>
     <string name="total_ram">Total RAM</string>
 
     <!-- Units -->
