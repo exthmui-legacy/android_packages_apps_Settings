@@ -66,11 +66,9 @@ public class ExthmHardwareInfoPreference extends Preference {
 
     public void setData(List<HardwareInfo> hardwareInfoList) {
         if (hardwareInfoList == null || hardwareInfoList.isEmpty()) {
-            Log.e("Col_or Settings", "hardwareInfoList is null");
             setVisible(false);
             return;
         }
-        Log.e("Col_or Settings", "hardwareInfoList is not null");
         setVisible(true);
         this.mHardwareInfoList = hardwareInfoList;
         notifyChanged();
@@ -120,7 +118,6 @@ public class ExthmHardwareInfoPreference extends Preference {
 
         public HardwareInfoAdapter(Context context, List<HardwareInfo> hardwareInfoList) {
             this.mContext = context;
-//            this.mHardwareInfoList = hardwareInfoList;
             setData(hardwareInfoList);
         }
 
